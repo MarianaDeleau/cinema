@@ -1,1 +1,1 @@
-export { }
+export { UsersTable } from './parts/UsersTable'

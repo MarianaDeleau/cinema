@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom'
-import { Admin, Detail, Home, Login, Movies, Series, Signup } from './pages';
+import { Admin, Detail, Home, Login, Movies, Series, Signup, Users } from './pages';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { UsersProvider } from './contexts';
 
@@ -18,6 +18,7 @@ const App = () => {
             <Route path='/movies' element={<Movies/>}/>
             <Route path='/series' element={<Series/>}/>
             <Route path='/detail' element={<Detail/>}/>
+            <Route path='/users' element={<Users/>}/>
             <Route path='/' element={<Home/>}/>
           </Routes>
         </Router>
