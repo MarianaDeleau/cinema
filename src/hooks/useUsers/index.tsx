@@ -2,16 +2,16 @@ import { useContext } from "react";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { usersApi } from "../../api";
 import { QUERY_KEYS } from "../../constants";
-//import { UsersContext } from "../../contexts";
+import { UsersContext } from "../../contexts";
 
 const useUsers = () => {
   const queryClient = useQueryClient();
 
-  //const { updateUsers, users } = useContext(UsersContext);
+  const { updateUsers, users } = useContext(UsersContext);
 
   const { isLoading } = useQuery(QUERY_KEYS.USERS, usersApi.getUsers, {
     onSuccess: (data) => {
-      //updateUsers(data);
+      updateUsers(data);
     },
   });
 
@@ -23,7 +23,7 @@ const useUsers = () => {
 
   const getUser = (id: string) => {};
 
-  return { getUser, addUser, isLoading };
+  return { getUser, addUser, isLoading, users };
 };
 
 export { useUsers };
