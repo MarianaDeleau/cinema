@@ -5,11 +5,14 @@ import { validationSchema } from "./validationschema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useUsers } from "../../../hooks";
 import { AddUserType } from "../../../types/models";
+import { useNavigate } from "react-router-dom";
 
 
 const AddUsers: FC = () => {
     const { addUser } = useUsers();
   
+    const navigate = useNavigate();
+
     const { handleSubmit, register, formState } = useForm({
       defaultValues,
       resolver: yupResolver(validationSchema),
@@ -17,6 +20,7 @@ const AddUsers: FC = () => {
   
     const onSubmit = async (data: AddUserType) => {
       await addUser(data);
+      navigate("/login");
     };
   
     return (
@@ -49,6 +53,11 @@ const AddUsers: FC = () => {
           <span className="text-danger">
             {formState.errors.password?.message}
           </span>
+        </div>
+        <div className="form-group">
+          <label htmlFor="">tipo</label>
+          <input type="text" {...register("type")} disabled value="user"/>
+          
         </div>
   
         <button type="submit">Crear Cuenta</button>

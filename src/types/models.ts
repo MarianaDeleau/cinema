@@ -1,9 +1,11 @@
 export type User = {
   id: string;
-  email: string;
-  password: string;
   name: string;
+  lastname: string;
+  email: string;
   birthdate: string;
+  password: string;
+  type: string;
 };
 
 export type AddUserType = Omit<User, "id">;
