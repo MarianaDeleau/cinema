@@ -1,1 +1,1 @@
-export { api } from "./axios";
+export { api, apiCinema } from "./axios";
