@@ -24,7 +24,7 @@ const useUsers = () => {
     },
   });
 
-  //const getUser = (id: string) => {};
+  
   const userAuth =  (data: UserLoginType) => {
     
    const userLogin =   users?.find((u) => {
@@ -45,8 +45,6 @@ const useUsers = () => {
 
   };
   
-
-
   return { userAuth, addUser, isLoading, users };
 };
 

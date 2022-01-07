@@ -6,9 +6,9 @@ const api = axios.create({
 
 
 const apiCinema = axios.create({
-  baseURL: process.env.REACT_APP_DB_API_TMDB,
+  baseURL: "https://api.themoviedb.org/3/",
   params: {
-    apikey: process.env.REACT_APP_DB_API_TMDB_KEY
+    api_key: "e5b14b46744569c8ec124eb349f2f2f6"
   }
 });
 
