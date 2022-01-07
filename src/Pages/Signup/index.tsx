@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { AddUsers } from '../../components/forms/AddUsers';
 
 const Signup: FC = () => {
     
@@ -6,6 +7,7 @@ const Signup: FC = () => {
       <>
         <div className="container">
          <h1>Signup</h1>
+         <AddUsers/>
         </div>
       </>
     );
