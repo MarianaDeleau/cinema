@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { CardMovie } from '../../components/parts/CardMovie';
 
 const Admin: FC = () => {
     
@@ -6,6 +7,7 @@ const Admin: FC = () => {
       <>
         <div className="container">
          <h1>Admin</h1>
+         <CardMovie/>
         </div>
       </>
     );
