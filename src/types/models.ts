@@ -10,3 +10,4 @@ export type User = {
 
 export type AddUserType = Omit<User, "id">;
 
+export type UserLoginType = Omit<User, "id" | "name" | "lastname" | "birthdate" | "type">;
