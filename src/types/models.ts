@@ -30,3 +30,15 @@ export type Item = {
   video?: boolean;
   vote_average: number;
 };
+
+export type ApiResponse = {
+  page: number, 
+  results: Item[], 
+  total_pages: number,
+  total_results: number,
+}
+
+export type Filter = {
+page: number,
+search: string | undefined
+}
