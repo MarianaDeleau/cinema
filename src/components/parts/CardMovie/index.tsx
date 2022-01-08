@@ -1,28 +1,15 @@
-import { FC, useState } from "react"
-import { getMovies } from "../../../api";
-import { Item } from "../../../types";
+import { FC } from "react"
+import { useItems } from "../../../hooks/useItems";
 
-// type Props = {
-//     id: number;
-//     title: string;
-//     vote_count?: number;
-// }
+
+
 const CardMovie: FC = () => {
     
-    const [item, setItem] = useState<Item[]>();
-
-    const movies = async () => {
-        const response = await getMovies()
-        setItem(response)
-    }
-
-    if (!item) {
-        movies()
-    }
-
+    const { items } = useItems();  
+    
     return (
         <div className="container">
-            {item?.map((item) => {
+            {items?.results.map((item) => {
                 return (
                     <div data-id={item.id}>
                     <div>
