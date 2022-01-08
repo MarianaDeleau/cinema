@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Paginator } from '../../components';
 import { CardMovie } from '../../components/parts/CardMovie';
 
 const Admin: FC = () => {

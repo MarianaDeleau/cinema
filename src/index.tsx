@@ -28,3 +28,10 @@ ReactDOM.render(
 
 //FIREBASE
 //https://cinemaada-1f3ab-default-rtdb.firebaseio.com/
+
+// endpoints tp final: 
+// /movie/${itemID}/videos
+// /search/multi?
+// /movie/top_rated?
+
+//https://api.themoviedb.org/3/movie/top_rated?api_key=e5b14b46744569c8ec124eb349f2f2f6&page=2
