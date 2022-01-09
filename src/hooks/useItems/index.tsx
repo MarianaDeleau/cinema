@@ -23,16 +23,11 @@ const useItems = () => {
       
     }, [page, search]);
     
-    console.log(items)
-    
-    
+
     const pages  = async () => {
     const response = await apiCinema.get("/movie/top_rated?");
     setLastPage(response.data.total_pages)
-    console.log(response.data.total_pages)    
 }
-
-    
 
     const setPage = (newPage: number) => {
       params.set("page", newPage.toString());
@@ -44,14 +39,7 @@ const useItems = () => {
       navigate(`${window.location.pathname}?${params.toString()}`);
     };
   
-    return {      
-      setPage,
-      setSearch,
-      page,
-      search,
-      lastPage,
-      items,
-    };
+    return { setPage, setSearch, page, search, lastPage, items };
   };
   
   export { useItems };
