@@ -11,7 +11,7 @@ const CardMovie: FC = () => {
         <div className="container">
             {items?.results.map((item) => {
                 return (
-                    <div data-id={item.id}>
+                    <div key={item.id} data-id={item.id}>
                     <div>
                         <img src={`http://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title} title={item.title} />
                     </div>
