@@ -1,5 +1,6 @@
 import { FC } from "react"
 import { useItems } from "../../../hooks/useItems";
+import { BasicRating } from "../Rating";
 
 
 
@@ -19,6 +20,7 @@ const CardMovie: FC = () => {
                         <h3>{item.title}</h3>
                         <h4>{item.vote_average}</h4>
                     </div>
+                    <BasicRating />
                 </div>
                 )
             })

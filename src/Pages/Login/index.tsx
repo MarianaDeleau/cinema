@@ -1,16 +1,18 @@
 import { FC } from 'react'
-import { LoginUser } from '../../components';
+import { Layout, LoginUser } from '../../components';
 
 
 const Login: FC = () => {
     
     return (
-    
+      <>
+      <Layout mainClass="login">
         <div className="container">
          <h1>Login Usuario</h1>
           <LoginUser/>
         </div>
-     
+        </Layout>
+      </>
     );
   };
   
