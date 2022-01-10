@@ -8,11 +8,12 @@ const Admin: FC = () => {
     return (
       <>
       <Layout mainClass="admin">
-        <div className="container">
-         <h1>Admin</h1>
+        <div className="container">       
          <CardMovie/>
         </div>
+        <div className="container mt-5 mb-3 d-flex justify-content-center"> 
         <BasicPagination/>
+        </div>
         </Layout>
       </>
     );
