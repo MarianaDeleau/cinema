@@ -16,7 +16,7 @@ const BasicPagination: FC = () => {
     }
 
     return (
-      <Stack spacing={2}>
+      <Stack spacing={5}>
         <Pagination page={page} count={Number(lastPage)} color="primary" onChange={handleChange} />        
       </Stack>
     ); 

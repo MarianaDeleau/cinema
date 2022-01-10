@@ -20,7 +20,7 @@ const NavbarApp = () => {
   };
 
   return (
-    <Tabs  onChange={handleChange} aria-label="icon label tabs example">
+    <Tabs  value={5} onChange={handleChange} aria-label="icon label tabs example">
       <Tab icon={<HomeIcon />} label="HOME" component={NavLink} to={"/"} />
       <Tab icon={<MovieIcon />} label="MOVIES" component={NavLink} to={"/movies"} />
       <Tab icon={<TvRoundedIcon />} label="SERIES" component={NavLink} to={"/series"}/>
