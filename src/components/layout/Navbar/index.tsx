@@ -11,6 +11,8 @@ import { ExitToAppRounded } from '@mui/icons-material';
 import { Home, Movies, Series } from '../../../pages';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { MemoryRouter } from 'react-router-dom';
+import { menuItems } from './routes'
+
 
 const NavbarApp = () => {
   const [value, setValue] = React.useState(0);
@@ -20,15 +22,24 @@ const NavbarApp = () => {
   };
 
   return (
-    <Tabs  value={5} onChange={handleChange} aria-label="icon label tabs example">
-      <Tab icon={<HomeIcon />} label="HOME" component={NavLink} to={"/"} />
-      <Tab icon={<MovieIcon />} label="MOVIES" component={NavLink} to={"/movies"} />
-      <Tab icon={<TvRoundedIcon />} label="SERIES" component={NavLink} to={"/series"}/>
-      <Tab icon={<PersonPinIcon />} label="USERS" component={NavLink} to={"/users"}/>
-      <Tab icon={<LockIcon />} label="ADMIN" component={NavLink} to={"/admin"}/>
-      <Tab icon={<ExitToAppRounded />} label="EXIT" component={NavLink} to={"/"}/>
+    <Tabs  value={false} onChange={handleChange} aria-label="icon label tabs example">      
+      <Tab icon={<HomeIcon />} label="HOME" component={NavLink} to={'/'} />
+      <Tab icon={<MovieIcon />} label="MOVIES" component={NavLink} to={'/movies'} />
+      <Tab icon={<TvRoundedIcon />} label="SERIES" component={NavLink} to={'/series'}/>
+      <Tab icon={<PersonPinIcon />} label="USERS" component={NavLink} to={'/users'}/>
+      <Tab icon={<LockIcon />} label="ADMIN" component={NavLink} to={'/admin'}/>
+      <Tab icon={<ExitToAppRounded />} label="EXIT" component={NavLink} to={'/'}/>
     </Tabs>
   );
 };
 
 export { NavbarApp };
+
+// {menuItems.map((item) => {
+
+//   return (
+//     <Tab icon={<MovieIcon/>} label={item.label} component={NavLink} to={item.href} />
+//   )
+//   })}  
+
+  
