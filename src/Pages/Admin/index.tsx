@@ -1,8 +1,9 @@
 import { FC } from 'react'
 import { BasicPagination, Layout } from '../../components';
 import { CardMovie } from '../../components/parts/CardMovie';
+import { WithAuth } from '../../hoc';
 
-const Admin: FC = () => {
+const AdminPage: FC = () => {
 
 
     return (
@@ -19,4 +20,4 @@ const Admin: FC = () => {
     );
   };
   
-  export { Admin };
+  export const Admin = WithAuth(AdminPage) 

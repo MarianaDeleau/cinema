@@ -1,8 +1,9 @@
 import { FC } from 'react'
 import { Layout, LoginUser } from '../../components';
+import { WithAuth } from '../../hoc';
 
 
-const Login: FC = () => {
+const LoginPage: FC = () => {
     
     return (
       <>
@@ -16,4 +17,4 @@ const Login: FC = () => {
     );
   };
   
-  export { Login };
+  export const Login =  WithAuth(LoginPage);

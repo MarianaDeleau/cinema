@@ -11,4 +11,5 @@ const addUser = async (payload: AddUserType) => {
   await api.post("/users.json", payload);
 };
 
+
 export const usersApi = { getUsers, addUser };

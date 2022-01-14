@@ -1,8 +1,9 @@
 import { FC } from 'react'
 import { Layout } from '../../components';
 import { AddUsers } from '../../components/forms/AddUsers';
+import { WithAuth } from '../../hoc';
 
-const Signup: FC = () => {
+const SignupPage: FC = () => {
     
     return (
       <>
@@ -16,4 +17,4 @@ const Signup: FC = () => {
     );
   };
   
-  export { Signup };
+  export const Signup =  WithAuth(SignupPage);

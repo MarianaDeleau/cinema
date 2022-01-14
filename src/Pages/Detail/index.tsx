@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import { Layout } from '../../components'
+import { WithAuth } from '../../hoc';
 
-const Detail: FC = () => {
+const DetailPage: FC = () => {
     
     return (
       <>
@@ -14,4 +15,4 @@ const Detail: FC = () => {
     );
   };
   
-  export { Detail };
+  export const Detail =  WithAuth(DetailPage)

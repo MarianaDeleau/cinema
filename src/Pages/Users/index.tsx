@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import { Layout, UsersTable } from '../../components';
+import { WithAuth } from '../../hoc';
 
-const Users: FC = () => {
+const UsersPage: FC = () => {
     
     return (
       <>
@@ -16,4 +17,4 @@ const Users: FC = () => {
     );
   };
   
-  export { Users };
+  export const Users =  WithAuth(UsersPage)
