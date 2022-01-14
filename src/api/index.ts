@@ -1,2 +1,2 @@
 export { usersApi } from "./users";
-export { searchMulti, addMovieToDB } from './moviedatabase'
+export { movieApi } from './moviedatabase'

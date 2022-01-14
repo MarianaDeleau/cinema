@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { searchMulti } from "../../api";
+import { movieApi } from "../../api";
 import { ApiResponse } from "../../types/models";
-import { apiCinema } from "../../utils";
-
+import { api, apiCinema } from "../../utils";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import {QUERY_KEYS} from "../../constants"
 
 
 const useItems = () => {
+  const queryClient = useQueryClient();
+
     const params = new URLSearchParams(window.location.search);
     const page = parseInt(params.get("page")!) || 1;
     const search = params.get("search") || undefined;
@@ -17,7 +20,7 @@ const useItems = () => {
     const [lastPage, setLastPage] = useState("")
 
     useEffect(() => {
-      searchMulti({page, search}).then((response) => 
+      movieApi.searchMulti({page, search}).then((response) => 
       setItems(response)); 
       pages();
       
@@ -39,9 +42,13 @@ const useItems = () => {
       navigate(`${window.location.pathname}?${params.toString()}`);
     };
 
-    
+    const { mutateAsync: addMovieToDB } = useMutation(movieApi.addMovieToDB,  {
+      onSuccess: () => {
+        queryClient.invalidateQueries(QUERY_KEYS.ITEMS);
+      },
+    });
   
-    return { setPage, setSearch, page, search, lastPage, items };
+    return { setPage, setSearch, page, search, lastPage, items, addMovieToDB };
   };
   
   export { useItems };

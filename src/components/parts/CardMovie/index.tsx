@@ -7,7 +7,7 @@ import { Card } from "@mui/material";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import { addMovieToDB } from '../../../api';
+import { movieApi } from '../../../api';
 
 const CardMovie: FC = () => {
     
@@ -41,7 +41,7 @@ const CardMovie: FC = () => {
               </CardContent>
             </CardActionArea>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }} >AGREGAR</Button>
+              <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {movieApi.addMovieToDB(item)} }>AGREGAR</Button>
             </CardActions>
           </Card>
          )})}

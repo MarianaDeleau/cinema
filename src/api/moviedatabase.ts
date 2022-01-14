@@ -24,4 +24,4 @@ await api.post('/items.json', data)
 
 }
 
-export {  searchMulti, addMovieToDB }
+export const movieApi = {  searchMulti, addMovieToDB }
