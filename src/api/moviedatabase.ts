@@ -1,5 +1,5 @@
-import { ApiResponse, Filter } from "../types";
-import { apiCinema } from "../utils";
+import { ApiResponse, Filter, Item } from "../types";
+import { api, apiCinema } from "../utils";
 import { mapToArray } from "../helpers";
 
 
@@ -18,4 +18,10 @@ const searchMulti = async ({page, search}: Filter): Promise<ApiResponse> => {
 };
 
 
-export {  searchMulti }
+const addMovieToDB = async (data: Item) => {
+
+await api.post('/items.json', data)
+
+}
+
+export {  searchMulti, addMovieToDB }

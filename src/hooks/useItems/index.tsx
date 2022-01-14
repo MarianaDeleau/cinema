@@ -38,6 +38,8 @@ const useItems = () => {
       params.set("search", s);
       navigate(`${window.location.pathname}?${params.toString()}`);
     };
+
+    
   
     return { setPage, setSearch, page, search, lastPage, items };
   };

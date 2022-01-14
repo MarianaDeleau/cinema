@@ -1,7 +1,5 @@
 import { FC } from "react"
 import { useItems } from "../../../hooks/useItems";
-import { BasicRating } from "../Rating";
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
@@ -9,10 +7,18 @@ import { Card } from "@mui/material";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import { addMovieToDB } from '../../../api';
 
 const CardMovie: FC = () => {
     
     const { items } = useItems();  
+
+    // const handleClick = async () => {
+
+    //   await addMovieToDB
+
+    // }
+
         return (
           <div className="container d-flex flex-wrap justify-content-center ">  
           {items?.results.map ((item)=>  { return (
@@ -35,7 +41,7 @@ const CardMovie: FC = () => {
               </CardContent>
             </CardActionArea>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }}>AGREGAR</Button>
+              <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }} >AGREGAR</Button>
             </CardActions>
           </Card>
          )})}

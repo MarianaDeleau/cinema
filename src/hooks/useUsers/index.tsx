@@ -57,20 +57,22 @@ const useUsers = () => {
      
     try {
      const currentUser = users?.find((u) => {
-      if (u.email === email && u.password === password) {
+       
+        if (u.email === email && u.password === password) {
         return true;
-      }
-      return false;
-      });
+        }
+        return false;
+        });
 
-    if (currentUser) {
-      const token = await createUserToken(currentUser);
+        if (currentUser) {
 
-      if (token) {
-      setTokenStorage(token);
-      userSession({ ...currentUser });
-      navigate("/movies")  
-       // setHasUserLoggedIn(true);
+        const token = await createUserToken(currentUser);
+
+        if (token) {
+        setTokenStorage(token);
+        userSession({ ...currentUser });
+        navigate("/movies")  
+        // setHasUserLoggedIn(true);
     } else {
       setHasUserLoggedIn(false);
       }
@@ -78,8 +80,9 @@ const useUsers = () => {
         throw new Error("El usuario no existe");
             }
           } catch (e) {
-          }
+            
         }
+      }
  
 
   const loginWithToken = async () => {
