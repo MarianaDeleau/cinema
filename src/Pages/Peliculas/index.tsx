@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import { Layout } from '../../components';
+import { WithAuth } from '../../hoc';
 
-const Movies: FC = () => {
+const MoviesPage: FC = () => {
     
     return (
       <>
@@ -14,4 +15,4 @@ const Movies: FC = () => {
     );
   };
   
-  export { Movies };
+  export const Movies =  WithAuth(MoviesPage)

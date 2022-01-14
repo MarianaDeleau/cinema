@@ -24,7 +24,7 @@ const UsersProvider: FC = ({ children }) => {
   };
 
   const userSession  = (user: User) => {
-    setUserLogged(user)
+    setUserLogged(user || undefined)
   }
 
   return (

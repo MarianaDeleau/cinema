@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import { Layout } from '../../components';
+import { WithAuth } from '../../hoc';
 
-const Series: FC = () => {
+const SeriesPage: FC = () => {
     
     return (
       <>
@@ -14,4 +15,4 @@ const Series: FC = () => {
     );
   };
   
-  export { Series };
+  export const Series =  WithAuth(SeriesPage)

@@ -9,18 +9,20 @@ import { validationSchema } from './validationSchema'
 
 const LoginUser: FC = () => {
     
-    const { userAuth } = useUsers(); //enviar a hook?
+    const { userLogin } = useUsers(); //enviar a hook?
   
-    const navigate = useNavigate();
 
     const { handleSubmit, register, formState } = useForm({
         defaultValues,
         resolver: yupResolver(validationSchema),
       });
 
-      const onSubmit = (data: UserLoginType) => {
-      userAuth (data)
-         
+      const onSubmit = async (data: { email: string; password: string }) => {
+        try {
+          await userLogin(data.email, data.password);
+        } catch (e) {
+          // setAlert(e.message);
+        }
       };
 
     return (
