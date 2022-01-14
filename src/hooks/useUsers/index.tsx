@@ -5,8 +5,8 @@ import { usersApi } from "../../api";
 import { QUERY_KEYS } from "../../constants";
 import { UsersContext } from "../../contexts";
 import { mapToArray } from "../../helpers";
-import { User, UserLoginType } from "../../types";
-import { api, apiCinema } from "../../utils";
+import { User } from "../../types";
+import { api } from "../../utils";
 
 const useUsers = () => {
   const queryClient = useQueryClient();
@@ -41,6 +41,7 @@ const useUsers = () => {
 
   const [hasUserLoggedIn, setHasUserLoggedIn] = useState<boolean>();
 
+  
   const createUserToken = async (user: User): Promise<string | null> => {
       const newToken = Math.random().toString(36).substring(2);
         try {
@@ -51,15 +52,10 @@ const useUsers = () => {
       }
     };
   
+
    const userLogin = async (email: string, password: string) =>  {
      
     try {
-
-      // const response = await api.get("/users.json");
-
-      // /* Tarea de backend */
-      // const users: User[] = mapToArray(response.data);
-
      const currentUser = users?.find((u) => {
       if (u.email === email && u.password === password) {
         return true;
@@ -75,7 +71,6 @@ const useUsers = () => {
       userSession({ ...currentUser });
       navigate("/movies")  
        // setHasUserLoggedIn(true);
-      //console.log(userLogin)
     } else {
       setHasUserLoggedIn(false);
       }
@@ -83,16 +78,15 @@ const useUsers = () => {
         throw new Error("El usuario no existe");
             }
           } catch (e) {
-            // console.log(e);
           }
         }
  
+
   const loginWithToken = async () => {
   let user;
   try {
     const response = await api.get("/users.json");
 
-    /* Tarea de backend */
     const users: User[] = mapToArray(response.data);
 
     if (tokenStorage) {
@@ -106,15 +100,12 @@ const useUsers = () => {
       setHasUserLoggedIn(false);
     }
   } catch (e) {
-    // console.log(e);
   }
 };
 
 
-
     const logout = () => {
       localStorage.removeItem("cinema-token");
-      //userSession(undefined);
       navigate("/login");
     };
 
