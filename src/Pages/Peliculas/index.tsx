@@ -1,16 +1,18 @@
 import { FC } from 'react'
 import { Layout } from '../../components';
+import { UserCardMovie } from '../../components/parts/UserCardMovie';
 import { WithAuth } from '../../hoc';
 
 const MoviesPage: FC = () => {
     
     return (
       <>
-      <Layout mainClass="login">
-      <div className="container">
-         <h1>Peliculas</h1>
+       <Layout mainClass="admin">
+        <div className="container">       
+         <UserCardMovie/>
         </div>
-      </Layout>
+       
+        </Layout>
       </>
     );
   };

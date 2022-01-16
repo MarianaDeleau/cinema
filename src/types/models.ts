@@ -5,13 +5,14 @@ export type User = {
   email: string;
   birthdate: string;
   password: string;
-  type: string;
+  role: string;
   sessionToken?: string;
+  viewed: [string];
 };
 
 export type AddUserType = Omit<User, "id">;
 
-export type UserLoginType = Omit<User, "id" | "name" | "lastname" | "birthdate" | "type">;
+export type UserLoginType = Omit<User, "id" | "name" | "lastname" | "birthdate" | "role" | "viewed">;
 
 
 export type Item = {
@@ -21,7 +22,7 @@ export type Item = {
   release_date?: string;
   genre_ids?: number[];
   id: number;
-  idDB: string;
+  idDB: number;
   original_title?: string;
   original_language?: string;
   title: string;
@@ -30,6 +31,7 @@ export type Item = {
   vote_count?: number;
   video?: boolean;
   vote_average: number;
+  media_type: string;
 };
 
 export type ApiResponse = {

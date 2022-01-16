@@ -9,7 +9,7 @@ import { useUsers } from "../../hooks/useUsers"
 // actual o, si vengo de login o signup, tengo que enviar a
 // la pagina principal.
 
-const publicRoutes = ["/login", "/sign-up"];
+const publicRoutes = ["/login", "/signup"];
 
 type withAuthenticationFn = (Component: FC) => FC;
 

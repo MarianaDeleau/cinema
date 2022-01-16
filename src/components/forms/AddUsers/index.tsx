@@ -26,40 +26,42 @@ const AddUsers: FC = () => {
     return (
       <form action="" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
-          <label htmlFor="">nombre</label>
+          <label htmlFor="">Nombre</label>
           <input type="text" {...register("name")} />
           <span className="text-danger">{formState.errors.name?.message}</span>
         </div>
         <div className="form-group">
-          <label htmlFor="">apellido</label>
+          <label htmlFor="">Apellido</label>
           <input type="text" {...register("lastname")} />
           <span className="text-danger">{formState.errors.name?.message}</span>
         </div>
         <div className="form-group">
-          <label htmlFor="">email</label>
+          <label htmlFor="">Email</label>
           <input type="email" {...register("email")} />
           <span className="text-danger">{formState.errors.email?.message}</span>
         </div>
         <div className="form-group">
-          <label htmlFor="">nacimiento</label>
+          <label htmlFor="">Nacimiento</label>
           <input type="date" {...register("birthdate")} />
           <span className="text-danger">
             {formState.errors.birthdate?.message}
           </span>
         </div>
         <div className="form-group">
-          <label htmlFor="">password</label>
+          <label htmlFor="">Password</label>
           <input type="password" {...register("password")} />
           <span className="text-danger">
             {formState.errors.password?.message}
           </span>
         </div>
         <div className="form-group">
-          <label htmlFor="">tipo</label>
-          <input type="text" {...register("type")} disabled value="user"/>
-          
+          <label htmlFor="" hidden>Role</label>
+          <input type="text" {...register("role")} disabled value="user" hidden/>
         </div>
-  
+        <div className="form-group">
+          <label htmlFor="" hidden>Viewed</label>
+          <input type="text" {...register("viewed")} disabled />
+        </div>
         <button type="submit">Crear Cuenta</button>
       </form>
     );

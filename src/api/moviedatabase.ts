@@ -1,5 +1,5 @@
-import { ApiResponse, Filter } from "../types";
-import { apiCinema } from "../utils";
+import { ApiResponse, Filter, Item } from "../types";
+import { api, apiCinema } from "../utils";
 import { mapToArray } from "../helpers";
 
 
@@ -18,4 +18,21 @@ const searchMulti = async ({page, search}: Filter): Promise<ApiResponse> => {
 };
 
 
-export {  searchMulti }
+const addMovieToDB = async (data: Item) => {
+  await getMoviesDB
+  await api.post('/items.json', { ...data, media_type: data.media_type || "movies" })
+}
+
+const getMoviesDB = async (): Promise<Item[]> => {
+  const response = await api.get('/items.json')
+  return mapToArray(response.data);
+  }
+
+  const deleteMoviesFromDB = async (id: number) => {
+    const moviesDB = await getMoviesDB();
+    const movieToDelete = moviesDB.find((item) => item.id === id);
+    await api.delete(`/items/${movieToDelete?.idDB}.json`)
+  }
+
+ 
+export const movieApi = {  searchMulti, addMovieToDB, getMoviesDB, deleteMoviesFromDB }
