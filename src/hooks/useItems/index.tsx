@@ -5,6 +5,7 @@ import { ApiResponse } from "../../types/models";
 import { api, apiCinema } from "../../utils";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import {QUERY_KEYS} from "../../constants"
+import {Item} from '../../types'
 
 
 const useItems = () => {
@@ -18,6 +19,7 @@ const useItems = () => {
 
     const [items, setItems] = useState<ApiResponse>();
     const [lastPage, setLastPage] = useState("")
+    const [itemsDB, setItemsDB] = useState<Item[]>()
 
     useEffect(() => {
       movieApi.searchMulti({page, search}).then((response) => 
@@ -48,7 +50,13 @@ const useItems = () => {
       },
     });
   
-    return { setPage, setSearch, page, search, lastPage, items, addMovieToDB };
+    const { isLoading } = useQuery(QUERY_KEYS.ITEMS, movieApi.getMoviesDB, {
+      onSuccess: (data:Item[])=> {
+        setItemsDB(data);
+      }
+    })
+
+    return { setPage, setSearch, page, search, lastPage, items, addMovieToDB, isLoading, itemsDB };
   };
   
   export { useItems };

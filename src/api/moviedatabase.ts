@@ -19,9 +19,13 @@ const searchMulti = async ({page, search}: Filter): Promise<ApiResponse> => {
 
 
 const addMovieToDB = async (data: Item) => {
-
 await api.post('/items.json', data)
-
 }
 
-export const movieApi = {  searchMulti, addMovieToDB }
+const getMoviesDB = async (): Promise<Item[]> => {
+  const response = await api.get('/items.json')
+  return mapToArray(response.data);
+  }
+
+
+export const movieApi = {  searchMulti, addMovieToDB, getMoviesDB }
