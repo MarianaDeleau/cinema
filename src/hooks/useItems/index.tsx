@@ -56,7 +56,13 @@ const useItems = () => {
       }
     })
 
-    return { setPage, setSearch, page, search, lastPage, items, addMovieToDB, isLoading, itemsDB };
+    const { mutateAsync: deleteMoviesFromDB } = useMutation(movieApi.deleteMoviesFromDB,  {
+      onSuccess: () => {
+        queryClient.invalidateQueries(QUERY_KEYS.ITEMS);
+      },
+    });
+
+    return { setPage, setSearch, page, search, lastPage, items, addMovieToDB, isLoading, itemsDB, deleteMoviesFromDB };
   };
   
   export { useItems };

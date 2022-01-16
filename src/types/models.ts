@@ -22,7 +22,7 @@ export type Item = {
   release_date?: string;
   genre_ids?: number[];
   id: number;
-  idDB: string;
+  idDB: number;
   original_title?: string;
   original_language?: string;
   title: string;
@@ -31,6 +31,7 @@ export type Item = {
   vote_count?: number;
   video?: boolean;
   vote_average: number;
+  media_type: string;
 };
 
 export type ApiResponse = {

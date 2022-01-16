@@ -43,6 +43,9 @@ const CardMovie: FC = () => {
             <CardActions sx={{ justifyContent: 'center' }}>
               <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {movieApi.addMovieToDB(item)} }>AGREGAR</Button>
             </CardActions>
+            <CardActions sx={{ justifyContent: 'center' }}>
+              <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {movieApi.deleteMoviesFromDB(item.id)} }>REMOVER</Button>
+            </CardActions>
           </Card>
          )})}
           </div>

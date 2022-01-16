@@ -19,7 +19,8 @@ const searchMulti = async ({page, search}: Filter): Promise<ApiResponse> => {
 
 
 const addMovieToDB = async (data: Item) => {
-await api.post('/items.json', data)
+  await getMoviesDB
+  await api.post('/items.json', { ...data, media_type: data.media_type || "movies" })
 }
 
 const getMoviesDB = async (): Promise<Item[]> => {
@@ -27,5 +28,11 @@ const getMoviesDB = async (): Promise<Item[]> => {
   return mapToArray(response.data);
   }
 
+  const deleteMoviesFromDB = async (id: number) => {
+    const moviesDB = await getMoviesDB();
+    const movieToDelete = moviesDB.find((item) => item.id === id);
+    await api.delete(`/items/${movieToDelete?.idDB}.json`)
+  }
 
-export const movieApi = {  searchMulti, addMovieToDB, getMoviesDB }
+ 
+export const movieApi = {  searchMulti, addMovieToDB, getMoviesDB, deleteMoviesFromDB }

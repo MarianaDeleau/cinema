@@ -2,14 +2,12 @@ import { Box, Card, Rating, Typography } from "@mui/material";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import { movieApi } from '../../../api';
 import { useItems } from '../../../hooks'
 import { FC } from "react";
 
 const UserCardMovie: FC = () => {
     
     const { itemsDB } = useItems()
-
 
        return (
           <div className="container d-flex flex-wrap justify-content-center ">  
