@@ -8,19 +8,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { movieApi } from '../../../api';
+import { InputSearch } from "../InputSearch";
 
 const CardMovie: FC = () => {
     
     const { items } = useItems();  
 
-    // const handleClick = async () => {
-
-    //   await addMovieToDB
-
-    // }
 
         return (
           <div className="container d-flex flex-wrap justify-content-center ">  
+        
           {items?.results.map ((item)=>  { return (
           <Card sx={{ width: 200, margin: 2 }} className="card_movie">
             <CardActionArea>
