@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 
 *{
     margin: 0; 
@@ -16,7 +17,7 @@ code {
 header {
   height: 10vh;
   width: auto;
-  background-color: gray;
+  background-color: black;
   position: relative;
   display: flex;
   justify-content: end;
@@ -26,14 +27,15 @@ main{
   height: 85vh;
   width: auto;
   overflow: auto;   
-  background-color: #000;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
   color: #FFF;
 
 }
 footer{
   height: 5vh;
   width: 100vw; 
-  background-color: gray;
+  background-color: black;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -53,11 +55,26 @@ footer{
 
 /*Tipografia TAB NAVBAR VALUE SELECTED*/
 .Mui-selected{
-  color: black !important
+  color: gray !important
 }
 
 /*Tipografia Paginator*/
 .MuiPaginationItem-textPrimary{
-  color: white !important
+  color: black !important
 }
- 
+
+.logo{
+  font-family: 'Monoton', cursive !important;
+  font-size: 75px;
+ margin-right: 120px ;
+ color: red;
+}
+
+
+.css-1aquho2-MuiTabs-indicator{
+  background-color: red !important
+}
+
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
+  background-color: red !important
+}

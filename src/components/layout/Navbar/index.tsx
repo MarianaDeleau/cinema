@@ -22,6 +22,7 @@ const NavbarApp = () => {
 const { logout } = useUsers()
 
   return (
+  
     <Tabs  value={location.pathname} onChange={handleChange} aria-label="icon label tabs example">      
       <Tab icon={<HomeIcon />} label="HOME" component={NavLink} to={'/'} value={routes[0]}/>
       <Tab icon={<MovieIcon />} label="MOVIES" component={NavLink} to={'/movies'} value={routes[1]}/>
@@ -30,6 +31,7 @@ const { logout } = useUsers()
       <Tab icon={<LockIcon />} label="ADMIN" component={NavLink} to={'/admin'} value={routes[4]}/>
       <Tab icon={<ExitToAppRounded />} label="EXIT" component={NavLink} to={'/'} onClick={logout} value={false}/>
     </Tabs>
+
   );
 };
 
