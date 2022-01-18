@@ -20,7 +20,7 @@ const searchMulti = async ({page, search}: Filter): Promise<ApiResponse> => {
 
 const addMovieToDB = async (data: Item) => {
   await getMoviesDB
-  await api.post('/items.json', { ...data, media_type: data.media_type || "movies" })
+  await api.post('/items.json', { ...data, media_type: data.media_type || "movie" })
 }
 
 const getMoviesDB = async (): Promise<Item[]> => {

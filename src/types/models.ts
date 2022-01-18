@@ -32,6 +32,7 @@ export type Item = {
   video?: boolean;
   vote_average: number;
   media_type: string;
+  name?:string;
 };
 
 export type ApiResponse = {

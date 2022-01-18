@@ -9,7 +9,7 @@ const MoviesPage: FC = () => {
       <>
        <Layout mainClass="admin">
         <div className="container">       
-         <UserCardMovie/>
+         <UserCardMovie media_type='movie'/>
         </div>
        
         </Layout>
