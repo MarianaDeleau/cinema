@@ -78,3 +78,9 @@ footer{
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
   background-color: red !important
 }
+.login{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

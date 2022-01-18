@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Layout, UsersTable } from '../../components';
+import { Layout, UsersCard, UsersTable } from '../../components';
 import { WithAuth } from '../../hoc';
 
 const UsersPage: FC = () => {
@@ -8,9 +8,7 @@ const UsersPage: FC = () => {
       <>
       <Layout mainClass="login">
         <div className="container">
-         <h1>Users</h1>
-         <UsersTable/>
-
+             <UsersCard/>
         </div>
       </Layout>
       </>
