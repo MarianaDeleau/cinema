@@ -8,7 +8,7 @@ const HomePage: FC = () => {
     return (
       <>
       <Layout mainClass="home">
-        <div className="container">
+        <div className="container d-flex flex-wrap justify-content-center">
         <UserCardMovie media_type='movie'/>        
         <UserCardMovie media_type='tv'/>      
         </div>

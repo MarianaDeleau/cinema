@@ -8,11 +8,8 @@ const LoginPage: FC = () => {
     return (
       <>
       <Layout mainClass="login">
-        <div className="container">
-         <h1>Login Usuario</h1>
           <LoginUser/>
-        </div>
-        </Layout>
+      </Layout>
       </>
     );
   };

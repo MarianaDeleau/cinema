@@ -8,10 +8,7 @@ const SignupPage: FC = () => {
     return (
       <>
       <Layout mainClass="login">
-        <div className="container">
-         <h1>Signup</h1>
          <AddUsers/>
-        </div>
       </Layout>
       </>
     );

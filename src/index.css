@@ -84,3 +84,41 @@ footer{
   justify-content: center;
   align-items: center;
 }
+
+form{
+  width: 400px ;
+  background-color: grey;
+  border-radius: 20px;
+  padding: 20px;
+  height: auto;   
+  }
+
+  form > div{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px
+}
+
+input{
+    width: 180px;
+    border-radius: 5px;
+    align-self: flex-end;
+}
+
+select{
+    width: 180px;
+}
+
+h4{
+    margin-bottom: 20px;
+}
+
+button{
+  width: 150px;
+  color: white;
+  background: red;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: transparent;
+}
+

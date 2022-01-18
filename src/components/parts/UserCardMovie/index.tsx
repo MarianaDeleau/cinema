@@ -15,7 +15,7 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
     const { itemsDB } = useItems()
 
        return (
-          <div className="container d-flex flex-wrap justify-content-center ">  
+          <>  
           {itemsDB?.map ((item) =>  { 
             if (item.media_type === media_type)  { return (
           <Card sx={{ width: 200, margin: 2 }} className="card_movie">
@@ -43,7 +43,7 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
          )}
          return ''
          })}
-          </div>
+          </>
           );
       }
 

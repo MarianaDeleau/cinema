@@ -26,12 +26,12 @@ const LoginUser: FC = () => {
       };
 
     return (
-        <div className="container">
-        
-          <h4>Por favor ingrese su usuario:</h4>
-            <form action="" onSubmit={handleSubmit(onSubmit)}>
+        <div className="d-flex align-items-center flex-column">        
+          <form action="" onSubmit={handleSubmit(onSubmit)} className="d-flex flex-wrap flex-column">
+          <h2>Login</h2>
+          <h6>Por favor ingrese su usuario:</h6>
               <div>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email: </label>
                 <input
                   id="email"
                   type="email"                      
@@ -40,7 +40,7 @@ const LoginUser: FC = () => {
                 <span className="text-danger">{formState.errors.email?.message}</span>
               </div>
               <div>
-                <label htmlFor="pass">Contraseña</label>
+                <label htmlFor="pass">Contraseña: </label>
                 <input
                   id="pass"
                   type="password"                  

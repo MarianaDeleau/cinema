@@ -6,8 +6,8 @@ const UsersPage: FC = () => {
     
     return (
       <>
-      <Layout mainClass="login">
-        <div className="container d-flex justify-content-evenly">
+      <Layout mainClass="users align-items-center d-flex">
+        <div className="container d-flex flex-wrap justify-content-evenly">
              <UsersCard/>
         </div>
       </Layout>
