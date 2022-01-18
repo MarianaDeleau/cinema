@@ -5,13 +5,19 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import { useItems } from '../../../hooks'
 import { FC } from "react";
 
-const UserCardMovie: FC = () => {
+type Props = {
+  media_type: string;
+  
+}
+
+const UserCardMovie: FC<Props> = ({media_type}) => {
     
     const { itemsDB } = useItems()
 
        return (
           <div className="container d-flex flex-wrap justify-content-center ">  
-          {itemsDB?.map ((item)=>  { return (
+          {itemsDB?.map ((item) =>  { 
+            if (item.media_type === media_type)  { return (
           <Card sx={{ width: 200, margin: 2 }} className="card_movie">
             <CardActionArea>
               <CardMedia component="img"  height="300" width="150" image={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
@@ -19,7 +25,7 @@ const UserCardMovie: FC = () => {
               />
               <CardContent sx={{ height: 200 }}>
                 <Typography  component="div" sx={{ color: 'gray', fontWeight: 500, fontSize: 18, textAlign: 'center', lineHeight: 1.2 }}>
-                <p>{item.title}</p>
+                <p>{item.title || item.name}</p>
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'gray', fontWeight: 400, fontSize: 15, textAlign: 'center', lineHeight: 1.2   }}>
                 <p>{item.vote_average}</p>
@@ -34,7 +40,9 @@ const UserCardMovie: FC = () => {
               <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" /*onClick={()=> {movieApi.addMovieToDB(item)} }*/>VISTA</Button>
             </CardActions>
           </Card>
-         )})}
+         )}
+         return ''
+         })}
           </div>
           );
       }

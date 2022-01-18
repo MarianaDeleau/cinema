@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { Layout } from '../../components';
+import { UserCardMovie } from '../../components/parts/UserCardMovie';
 import { WithAuth } from '../../hoc';
 
 const HomePage: FC = () => {
@@ -8,7 +9,8 @@ const HomePage: FC = () => {
       <>
       <Layout mainClass="home">
         <div className="container">
-         <h1>Home</h1>
+        <UserCardMovie media_type='movie'/>        
+        <UserCardMovie media_type='tv'/>      
         </div>
         </Layout>
       </>
