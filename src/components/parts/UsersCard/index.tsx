@@ -19,7 +19,7 @@ const UsersCard: FC = () => {
         users?.map((u) => {
                
                   return(
-                 <Card style={{ width: '18rem' }} className="cardTask shadow-lg p-2 mb-5 bg-body rounded">
+                 <Card style={{ width: '18rem' }} className="shadow-lg p-2 mb-5 bg-body rounded d-flex align-items-center text-center">
                      <Card.Header>
                          <Card.Title className="fw-bold h4 text-white fs-6 fw-light badge rounded-pill bg-danger text-dark text-wrap">{(u.name.toUpperCase() + ' ' + u.lastname.toUpperCase())}</Card.Title>
                      </Card.Header>

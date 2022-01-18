@@ -7,7 +7,7 @@ const UsersPage: FC = () => {
     return (
       <>
       <Layout mainClass="login">
-        <div className="container">
+        <div className="container d-flex justify-content-evenly">
              <UsersCard/>
         </div>
       </Layout>
