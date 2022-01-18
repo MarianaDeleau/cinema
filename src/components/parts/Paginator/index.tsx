@@ -2,7 +2,6 @@ import * as React from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { FC } from 'react'
-import {  makeStyles } from '@mui/material/styles'
 import { useItems } from '../../../hooks/useItems';
 
 

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { movieApi } from "../../api";
 import { ApiResponse } from "../../types/models";
-import { api, apiCinema } from "../../utils";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import {QUERY_KEYS} from "../../constants"
 import {Item} from '../../types'
@@ -18,21 +17,21 @@ const useItems = () => {
     const navigate = useNavigate();
 
     const [items, setItems] = useState<ApiResponse>();
-    const [lastPage, setLastPage] = useState("")
+    const [lastPage, setLastPage] = useState(1)
     const [itemsDB, setItemsDB] = useState<Item[]>()
 
     useEffect(() => {
       movieApi.searchMulti({page, search}).then((response) => 
       setItems(response)); 
-      pages();
       
     }, [page, search]);
     
+    useEffect(() => {
+      movieApi.searchMulti({page, search}).then((response) => 
+      setLastPage(response.total_pages)); 
+      
+    }, [page, search]);
 
-    const pages  = async () => {
-    const response = await apiCinema.get("/movie/top_rated?");
-    setLastPage(response.data.total_pages)
-}
 
     const setPage = (newPage: number) => {
       params.set("page", newPage.toString());
@@ -40,7 +39,7 @@ const useItems = () => {
     };
 
     const setSearch = (s: string) => {
-      params.set("search", s);
+      params.set("search", s);     
       navigate(`${window.location.pathname}?${params.toString()}`);
     };
 
