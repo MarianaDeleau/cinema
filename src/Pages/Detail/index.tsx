@@ -6,7 +6,7 @@ const DetailPage: FC = () => {
     
     return (
       <>
-     <Layout mainClass="admin">
+     <Layout mainClass="detail">
         <div className="container">
          <h1>Detail</h1>
         </div>

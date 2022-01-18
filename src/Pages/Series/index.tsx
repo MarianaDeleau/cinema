@@ -7,8 +7,8 @@ const SeriesPage: FC = () => {
     
     return (
       <>
-      <Layout mainClass="login">
-        <div className="container">
+      <Layout mainClass="series">
+        <div className="container d-flex flex-wrap justify-content-center">
           <UserCardMovie media_type='tv'/>        
         </div>
       </Layout>

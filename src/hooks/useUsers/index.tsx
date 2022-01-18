@@ -22,10 +22,13 @@ const useUsers = () => {
   });
 
   const { mutateAsync: addUser } = useMutation(usersApi.addUser, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(QUERY_KEYS.USERS);
-    },
+    onSuccess: () =>  queryClient.invalidateQueries(QUERY_KEYS.USERS),   
   });
+
+  const { mutateAsync: deleteUser } = useMutation(usersApi.deleteUser, {
+    onSuccess: () => queryClient.invalidateQueries(QUERY_KEYS.USERS)   
+  });
+
 
 
  const [tokenStorage, setTokenStorage] = useState<string | undefined>(
@@ -45,7 +48,7 @@ const useUsers = () => {
   const createUserToken = async (user: User): Promise<string | null> => {
       const newToken = Math.random().toString(36).substring(2);
         try {
-          await api.patch(`/users/${user.id}.json`, { sessionToken: newToken });
+          await api.patch(`/users/${user.idDB}.json`, { sessionToken: newToken });
           return newToken;
       } catch (err) {
           return null;
@@ -71,7 +74,7 @@ const useUsers = () => {
         if (token) {
         setTokenStorage(token);
         userSession({ ...currentUser });
-        navigate("/movies")  
+        navigate("/home")  
         // setHasUserLoggedIn(true);
     } else {
       setHasUserLoggedIn(false);
@@ -114,7 +117,7 @@ const useUsers = () => {
 
 
 
-    return { userLogin, loginWithToken, logout, addUser, isLoading, users, userSession, userLogged, hasUserLoggedIn };
+    return { userLogin, loginWithToken, logout, addUser, isLoading, users, userSession, userLogged, hasUserLoggedIn, deleteUser };
   };
   
 

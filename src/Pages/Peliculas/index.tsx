@@ -7,8 +7,8 @@ const MoviesPage: FC = () => {
     
     return (
       <>
-       <Layout mainClass="admin">
-        <div className="container">       
+       <Layout mainClass="peliculas">
+        <div className="container d-flex flex-wrap justify-content-center">       
          <UserCardMovie media_type='movie'/>
         </div>
        

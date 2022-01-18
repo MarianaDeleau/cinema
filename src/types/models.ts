@@ -1,5 +1,4 @@
 export type User = {
-  id: string;
   name: string;
   lastname: string;
   email: string;
@@ -8,6 +7,7 @@ export type User = {
   role: string;
   sessionToken?: string;
   viewed: [string];
+  idDB?: string;
 };
 
 export type AddUserType = Omit<User, "id">;
