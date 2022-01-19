@@ -61,7 +61,12 @@ const useItems = () => {
       },
     });
 
-    return { setPage, setSearch, page, search, lastPage, items, addMovieToDB, isLoading, itemsDB, deleteMoviesFromDB };
+    const IsMovieInDB =  (id: number) => {
+      const IsMovieIn =  itemsDB?.find((item) => item.id === id);
+      if(IsMovieIn){ return true }
+    }
+
+    return { setPage, setSearch, page, search, lastPage, items, addMovieToDB, isLoading, itemsDB, deleteMoviesFromDB, IsMovieInDB };
   };
   
   export { useItems };

@@ -11,7 +11,7 @@ import { movieApi } from '../../../api';
 
 const CardMovie: FC = () => {
     
-    const { items } = useItems();  
+    const { items, IsMovieInDB } = useItems();  
 
 
         return (
@@ -36,12 +36,12 @@ const CardMovie: FC = () => {
               </Box>
               </CardContent>
             </CardActionArea>
-            <CardActions sx={{ justifyContent: 'center' }}>
-              <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {movieApi.addMovieToDB(item)} }>AGREGAR</Button>
-            </CardActions>
-            <CardActions sx={{ justifyContent: 'center' }}>
-              <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {movieApi.deleteMoviesFromDB(item.id)} }>REMOVER</Button>
-            </CardActions>
+            {!IsMovieInDB(item.id) && <CardActions sx={{ justifyContent: 'center' }}>
+           <Button size="small" sx={{ backgroundColor: 'red', width: 120 }} type="submit" onClick={()=> {movieApi.addMovieToDB(item)} }>AGREGAR</Button> 
+            </CardActions>}
+            {IsMovieInDB(item.id) &&<CardActions sx={{ justifyContent: 'center' }}>
+            <Button size="small" sx={{ backgroundColor: 'black', width: 120 }} type="submit" onClick={()=> {movieApi.deleteMoviesFromDB(item.id)} }>REMOVER</Button>
+            </CardActions>}
           </Card>
          )})}
           </div>
