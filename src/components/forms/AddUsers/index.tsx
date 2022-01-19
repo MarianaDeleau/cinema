@@ -65,7 +65,7 @@ const AddUsers: FC = () => {
           <label htmlFor="" hidden>Viewed</label>
           <input type="text" {...register("viewed")} hidden />
         </div>
-        <button type="submit">Crear Cuenta</button>
+        <button type="submit" className="btnForm">Crear Cuenta</button>
       </form>
       </div>
     );

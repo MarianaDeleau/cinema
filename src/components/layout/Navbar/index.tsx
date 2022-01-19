@@ -34,8 +34,8 @@ const { logout } = useUsers()
       <Tab icon={<HomeIcon />} label="HOME" component={NavLink} to={'/'} value={routes[2]}/>
       <Tab icon={<MovieIcon />} label="MOVIES" component={NavLink} to={'/movies'} value={routes[3]}/>
       <Tab icon={<TvRoundedIcon />} label="SERIES" component={NavLink} to={'/series'} value={routes[4]}/>
-      <Tab icon={<PersonPinIcon />} label="USERS" component={NavLink} to={'/users'} value={routes[5]}/>
-      <Tab icon={<LockIcon />} label="ADMIN" component={NavLink} to={'/admin'} value={routes[6]}/>
+      {userLogged?.role === 'admin' && <Tab icon={<PersonPinIcon />} label="USERS" component={NavLink} to={'/users'} value={routes[5]}/>}
+      {userLogged?.role === 'admin' && <Tab icon={<LockIcon />} label="ADMIN" component={NavLink} to={'/admin'} value={routes[6]}/>}
       <Tab icon={<ExitToAppRounded />} label="EXIT" component={NavLink} to={'/'} onClick={logout} value={false}/>
     </Tabs>
 
