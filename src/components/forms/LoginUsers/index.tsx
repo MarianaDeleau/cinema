@@ -50,7 +50,7 @@ const LoginUser: FC = () => {
             {formState.errors.password?.message}
           </span>
               </div>
-              <button type="submit">Iniciar sesión</button>
+              <button type="submit" className="btnForm">Iniciar sesión</button>
             </form>
         </div>
      

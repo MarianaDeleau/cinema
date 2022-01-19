@@ -74,8 +74,8 @@ const useUsers = () => {
         if (token) {
         setTokenStorage(token);
         userSession({ ...currentUser });
-        navigate("/home")  
-        // setHasUserLoggedIn(true);
+        navigate("/")  
+        setHasUserLoggedIn(true);
     } else {
       setHasUserLoggedIn(false);
       }
@@ -112,6 +112,7 @@ const useUsers = () => {
 
     const logout = () => {
       localStorage.removeItem("cinema-token");
+      setHasUserLoggedIn(false);
       navigate("/login");
     };
 
