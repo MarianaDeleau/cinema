@@ -15,9 +15,11 @@ const Loading = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: "grey"
       }}
     >
-      <RingLoader color="#555" loading={loading} size={20} />
+      loading...
+      <RingLoader color="red" loading={loading} size={60} />
     </div>
   );
 };

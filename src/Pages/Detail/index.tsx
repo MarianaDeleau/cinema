@@ -1,14 +1,15 @@
 import { FC } from 'react'
 import { Layout } from '../../components'
 import { WithAuth } from '../../hoc';
-
+import { DetailCard } from '../../components/parts/Detail'
 const DetailPage: FC = () => {
-    
+  const params = new URLSearchParams(window.location.search);
+  
     return (
       <>
      <Layout mainClass="detail">
         <div className="container">
-         <h1>Detail</h1>
+          <DetailCard idDetail={params.get('id')!}/>
         </div>
     </Layout>
       </>

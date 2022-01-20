@@ -27,13 +27,26 @@ const addMovieToDB = async (data: Item) => {
 const getMoviesDB = async (): Promise<Item[]> => {
   const response = await api.get('/items.json')
   return mapToArray(response.data);
-  }
+}
 
-  const deleteMoviesFromDB = async (id: number) => {
-    const moviesDB = await getMoviesDB();
-    const movieToDelete = moviesDB.find((item) => item.id === id);
-    await api.delete(`/items/${movieToDelete?.idDB}.json`)
-  }
+const deleteMoviesFromDB = async (id: number) => {
+  const moviesDB = await getMoviesDB();
+  const movieToDelete = moviesDB.find((item) => item.id === id);
+  await api.delete(`/items/${movieToDelete?.idDB}.json`)
+}
 
- 
-export const movieApi = {  searchMulti, addMovieToDB, getMoviesDB, deleteMoviesFromDB }
+const getMovieDB = async (idDB: string) => {
+  const response = await api.get(`/items/${idDB}.json`)
+  return response
+}
+
+const getTrailers = async (id: number) => {
+  const response = await apiCinema.get(`/movie/${id}/videos`);
+  return response.data;
+};
+
+
+export const movieApi = {  searchMulti, addMovieToDB, getMoviesDB, deleteMoviesFromDB, getMovieDB, getTrailers }
+
+
+
