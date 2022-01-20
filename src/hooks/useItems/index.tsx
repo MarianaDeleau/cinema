@@ -19,6 +19,7 @@ const useItems = () => {
     const [items, setItems] = useState<ApiResponse>();
     const [lastPage, setLastPage] = useState(1)
     const [itemsDB, setItemsDB] = useState<Item[]>()
+    const [movieDetail, setMovieDetail] = useState<Item>()
 
     useEffect(() => {
       movieApi.searchMulti({page, search}).then((response) => 
@@ -61,7 +62,17 @@ const useItems = () => {
       },
     });
 
-    return { setPage, setSearch, page, search, lastPage, items, addMovieToDB, isLoading, itemsDB, deleteMoviesFromDB };
+const openDetail = async (id: string) => {
+  const detail = await movieApi.getMovieDB(id)
+    setMovieDetail(detail.data) ;
+  }
+    
+    const IsMovieInDB =  (id: number) => {
+      const IsMovieIn =  itemsDB?.find((item) => item.id === id);
+      if(IsMovieIn){ return true }
+    }
+
+    return { setPage, setSearch, page, search, lastPage, items, addMovieToDB, isLoading, itemsDB, deleteMoviesFromDB, IsMovieInDB, openDetail, movieDetail };
   };
   
   export { useItems };
