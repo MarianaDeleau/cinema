@@ -95,14 +95,14 @@ form{
 
   form > div{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     margin: 5px 0px
 }
 
 input{
     width: 180px;
     border-radius: 5px;
-    align-self: flex-end;
+    margin-left: auto;
 }
 
 select{
@@ -120,9 +120,12 @@ h4{
   margin-top: 20px;
   border-radius: 10px;
   border: transparent;
+  align-self: center;
 }
 
-
+h2{
+  text-align: center;
+}
 
 
 @media screen and (max-width: 500px) {
@@ -132,7 +135,6 @@ h4{
 flex-direction: column !important;
 align-items: center;
   }
-
+ 
   
 }
-
