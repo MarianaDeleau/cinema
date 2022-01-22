@@ -12,11 +12,8 @@ import { Trailer } from '../../../types'
 import { wrap } from "module";
 
 
-// type Props = {
-//   idDetail: string,
-// }
 
-const DetailCard: FC/*<Props>*/ = (/*{idDetail}*/) => {
+const DetailCard: FC = () => {
     
     const { openDetail, movieDetail } = useItems()
     const params = new URLSearchParams(window.location.search);
@@ -55,9 +52,9 @@ movieApi.getTrailers(movieDetail?.id!)
                     </Typography>
                   </CardContent>
                     <Box sx={{ '& > legend': { mt: 2 }, color: "gray", textAlign: 'center' } } >      
-                          <Rating name="read-only" value={movieDetail?.vote_average &&movieDetail?.vote_average/2} precision={0.5} max={5} sx={{mb: 5}} readOnly />                  
+                          <Rating name="read-only" value={movieDetail?.vote_average!/2} precision={0.5} max={5} sx={{mb: 5}} readOnly />                  
                     </Box>    
-                    <Box sx={{ '& > legend': { mt: 2 }, color: 'gray', textAlign: 'center', display: 'flex', flexWrap: 'wrap' }} >      
+                    <Box sx={{ '& > legend': { mt: 2 }, color: 'gray', display: 'flex', flexWrap: 'wrap', textAlign: 'center', justifyContent: 'center',}} >      
                     {trailers?.map((video) => (
                           <div  className={`col-md-${ trailers.length === 1 ? 12 : 6 } mb-3`} >
                             <iframe
@@ -74,12 +71,12 @@ movieApi.getTrailers(movieDetail?.id!)
                     </Box> 
                 </CardActionArea>
               </Box>
-            <CardMedia component="img"  /*height="300" width="50"*/ sx={{width: 400, height: 600, borderRadius: 10}} image={`http://image.tmdb.org/t/p/w500${movieDetail?.poster_path}`} alt={movieDetail?.title || movieDetail?.name}/>
+              <Box>
+            <CardMedia component="img" sx={{width: 400, height: 600, borderRadius: 10}} image={`http://image.tmdb.org/t/p/w500${movieDetail?.poster_path}`} alt={movieDetail?.title || movieDetail?.name} className="card_media"/>
+            </Box>
           </Card>
         </div>
         );
   }
 
       export { DetailCard }
-
-                    // {/* <iframe width="560" height="315" src={movieDetail?.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
