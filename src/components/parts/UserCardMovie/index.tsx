@@ -4,28 +4,29 @@ import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { useItems } from '../../../hooks'
 import { FC } from "react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 type Props = {
-  media_type: string;
-  
+  media_type: string;  
 }
 
 const UserCardMovie: FC<Props> = ({media_type}) => {
     
-    const { itemsDB} = useItems()
+    const { itemsDB, openDetail } = useItems()
+
+    const navigate = useNavigate()
 
        return (
           <>  
           {itemsDB?.map ((item) =>  { 
             if (item.media_type === media_type)  { return (
-              <Card sx={{ width: 200, margin: 2 }} className="card_movie">
+              <Card sx={{ width: 200, margin: 2 }} className="card_movie" onClick={() => navigate(`/detail?id=${item.idDB}`)}>
                 <CardActionArea>
-                      <Link to={`/detail?id=${item.idDB}`}>
+                      {/* <Link to={`/detail?id=${item.idDB}`}> */}
                         <CardMedia component="img"  height="300" width="150" image={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
                         alt={item.title}/>  
-                      </Link>
+                      {/* </Link> */}
                   <CardContent sx={{ height: 200 }}>
                     <Typography  component="div" sx={{ color: 'gray', fontWeight: 500, fontSize: 18, textAlign: 'center', lineHeight: 1.2 }}>
                     <p>{item.title || item.name}</p>

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Layout, UsersCard, UsersTable } from '../../components';
+import { Layout, UsersCard } from '../../components';
 import { WithAuth } from '../../hoc';
 
 const UsersPage: FC = () => {
