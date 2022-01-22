@@ -26,6 +26,6 @@ const App = () => {
     </QueryClientProvider>
   );
 }
-//await apiCinema.get( `/movie/${id}/videos`);
+
 
 export default App;
