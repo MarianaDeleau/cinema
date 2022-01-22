@@ -18,10 +18,9 @@ header {
   height: 10vh;
   width: auto;
   background-color: black;
-  position: relative;
   display: flex;
-  justify-content: end;
-  padding-right: 200px;
+  justify-content: space-between;
+  
 }
 main{
   height: 85vh;
@@ -66,14 +65,14 @@ footer{
 .logo{
   font-family: 'Monoton', cursive !important;
   font-size: 75px;
- margin-right: 120px ;
- color: red;
+  color: red;
 }
 
 
 .css-1aquho2-MuiTabs-indicator{
   background-color: red !important
 }
+
 
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
   background-color: red !important
@@ -136,5 +135,22 @@ flex-direction: column !important;
 align-items: center;
   }
  
+  header{
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
   
+  .logo{
+    font-size: 65px;
+  }
+  .MuiTab-textColorPrimary{
+    width: auto;    
+  }
+  
+  footer{
+    height: 5vh;
+    width: 100vw; 
+    position: relative;
+  }
 }

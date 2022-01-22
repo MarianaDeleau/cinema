@@ -113,7 +113,7 @@ const useUsers = () => {
     const logout = () => {
       localStorage.removeItem("cinema-token");
       setHasUserLoggedIn(false);
-      //userSession(undefined)
+      userSession(undefined)
       navigate("/login");
     };
 

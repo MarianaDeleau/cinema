@@ -5,7 +5,7 @@ type Context = {
   users?: User[];
   userLogged?: User | undefined;
   updateUsers: (users: User[]) => void;
-  userSession: (user: User) => void;
+  userSession: (user: User | undefined) => void;
 };
 
 const UsersContext = createContext<Context>({
@@ -23,7 +23,7 @@ const UsersProvider: FC = ({ children }) => {
     setUsers(users);
   };
 
-  const userSession  = (user: User) => {
+  const userSession  = (user: User | undefined) => {
     setUserLogged(user || undefined)
   }
 
