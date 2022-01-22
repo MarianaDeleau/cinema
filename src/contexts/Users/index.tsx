@@ -3,7 +3,7 @@ import { User } from "../../types";
 
 type Context = {
   users?: User[];
-  userLogged?: User;
+  userLogged?: User | undefined;
   updateUsers: (users: User[]) => void;
   userSession: (user: User) => void;
 };

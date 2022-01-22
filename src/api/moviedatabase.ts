@@ -42,8 +42,9 @@ const getMovieDB = async (idDB: string) => {
 
 const getTrailers = async (id: number) => {
   const response = await apiCinema.get(`/movie/${id}/videos`);
-  return response.data;
+  return response.data.results;
 };
+
 
 
 export const movieApi = {  searchMulti, addMovieToDB, getMoviesDB, deleteMoviesFromDB, getMovieDB, getTrailers }

@@ -62,10 +62,10 @@ const useItems = () => {
       },
     });
 
-const openDetail = async (id: string) => {
-  const detail = await movieApi.getMovieDB(id)
-    setMovieDetail(detail.data) ;
-  }
+    const openDetail = async (id: string) => {
+      const detail = await movieApi.getMovieDB(id)
+       setMovieDetail(detail.data) ;
+    }
     
     const IsMovieInDB =  (id: number) => {
       const IsMovieIn =  itemsDB?.find((item) => item.id === id);
