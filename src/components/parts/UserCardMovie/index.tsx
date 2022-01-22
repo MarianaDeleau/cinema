@@ -14,7 +14,7 @@ type Props = {
 
 const UserCardMovie: FC<Props> = ({media_type}) => {
     
-    const { itemsDB } = useItems()
+    const { itemsDB} = useItems()
 
        return (
           <>  
@@ -25,7 +25,7 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
                       <Link to={`/detail?id=${item.idDB}`}>
                         <CardMedia component="img"  height="300" width="150" image={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
                         alt={item.title}/>  
-                    </Link>
+                      </Link>
                   <CardContent sx={{ height: 200 }}>
                     <Typography  component="div" sx={{ color: 'gray', fontWeight: 500, fontSize: 18, textAlign: 'center', lineHeight: 1.2 }}>
                     <p>{item.title || item.name}</p>
@@ -35,7 +35,7 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
                     </Typography>
                   <Box
                         sx={{ '& > legend': { mt: 2 }, color: "gray", textAlign: 'center' }} >      
-                        <Rating name="read-only" value={item.vote_average/2} precision={0.5} max={5} readOnly />                  
+                        <Rating name="read-only" value={item.vote_average && item.vote_average/2} precision={0.5} max={5} readOnly />                  
                   </Box>
                   </CardContent>
                 </CardActionArea>

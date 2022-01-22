@@ -32,7 +32,7 @@ const CardMovie: FC = () => {
                 </Typography>
               <Box
                     sx={{ '& > legend': { mt: 2 }, color: "gray", textAlign: 'center' }} >      
-                    <Rating name="read-only" value={item.vote_average/2} precision={0.5} max={5} readOnly />                  
+                    <Rating name="read-only" value={item.vote_average && item.vote_average/2} precision={0.5} max={5} readOnly />                  
               </Box>
               </CardContent>
             </CardActionArea>

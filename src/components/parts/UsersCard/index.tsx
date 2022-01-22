@@ -30,7 +30,7 @@ const UsersCard: FC = () => {
                          <Card.Subtitle className="badge rounded-pill bg-secondary text-light btn ps-3 pe-3 pt-2 pb-2">{u.role}</Card.Subtitle>     
                      </Card.Body>
                          <Card.Footer style={{width: "100%"}}>
-                         <button className="btn btn-danger" type='button' onClick={()=> usersApi.deleteUser(u.idDB) }><Trash /></button> 
+                         <button className="btn btn-danger" type='button' onClick={()=> deleteUser(u.idDB) }><Trash /></button> 
                          </Card.Footer>          
                  </Card>
                )})               

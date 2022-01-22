@@ -12,10 +12,10 @@ const useUsers = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
-  const { updateUsers, users, userLogged, userSession} = useContext(UsersContext);
+  const { updateUsers, /*users,*/ userLogged, userSession} = useContext(UsersContext);
 
 
-  const { isLoading } = useQuery(QUERY_KEYS.USERS, usersApi.getUsers, {
+  const { data: users, isLoading } = useQuery(QUERY_KEYS.USERS, usersApi.getUsers, {
     onSuccess: (data) => {
       updateUsers(data);
     },
