@@ -6,8 +6,8 @@ const UsersPage: FC = () => {
     
     return (
       <>
-      <Layout mainClass="users align-items-center d-flex">
-        <div className="container d-flex flex-wrap justify-content-evenly">
+      <Layout mainClass="users">
+        <div className="container">
              <UsersCard/>
         </div>
       </Layout>
