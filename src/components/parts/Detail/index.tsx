@@ -22,7 +22,7 @@ const DetailCard: FC = () => {
 
     useEffect(() => {
       openDetail(idDetail!);
-    },[]);
+    },[idDetail]);
 
     const [trailers, setTrailers] = useState<Trailer[]>([])
 
