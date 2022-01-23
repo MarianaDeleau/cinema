@@ -12,11 +12,11 @@ const AdminPage: FC = () => {
       <>
       <Layout mainClass="admin">
         <div className="container">
-        <InputSearch handleChange={setSearch}/>       
-         <CardMovie/>
-        </div>
-        <div className="container mt-5 mb-3 d-flex justify-content-center"> 
-        <BasicPagination/>
+          <InputSearch handleChange={setSearch}/>       
+          <CardMovie/>
+          </div>
+          <div className="container mt-5 mb-3 d-flex justify-content-center"> 
+          <BasicPagination/>
         </div>
         </Layout>
       </>

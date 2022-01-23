@@ -60,5 +60,4 @@ export type Trailer = {
   official: boolean,
   published_at: string,
   id: string,
-
 }
