@@ -117,9 +117,25 @@ const useUsers = () => {
       navigate("/login");
     };
 
+    
+    const addItemToList = async (user: User | undefined, idDB: string) => {
+      await usersApi.addItemtoViewed(user, idDB)
+      await updateUserLogged(userLogged?.idDB)      
+          }
 
+    const removeItemFromList = async (user: User | undefined, idDB: string) => {
+      await usersApi.removeItemFromViewed(user, idDB)
+      await updateUserLogged(userLogged?.idDB)      
+          }
+      
 
-    return { userLogin, loginWithToken, logout, addUser, isLoading, users, userSession, userLogged, hasUserLoggedIn, deleteUser };
+    const updateUserLogged = async (idDB: string | undefined) => {
+      const user = await usersApi.updateUser(idDB)
+      userSession(user);  
+    }
+      
+
+    return { userLogin, loginWithToken, logout, addUser, isLoading, users, userSession, userLogged, hasUserLoggedIn, deleteUser, addItemToList, removeItemFromList, updateUserLogged };
   };
   
 
