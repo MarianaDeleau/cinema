@@ -9,7 +9,6 @@ import CardMedia from '@mui/material/CardMedia';
 import {  CardActionArea } from '@mui/material';
 import { movieApi } from '../../../api'
 import { Trailer } from '../../../types'
-import { wrap } from "module";
 
 
 

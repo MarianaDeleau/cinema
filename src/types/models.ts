@@ -6,7 +6,7 @@ export type User = {
   password: string;
   role: string;
   sessionToken?: string;
-  viewed: [string];
+  viewed?: [string];
   idDB?: string;
 };
 

@@ -2,9 +2,11 @@ import { Box, Card, Rating, Typography } from "@mui/material";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import { useItems } from '../../../hooks'
+import { useItems, useUsers } from '../../../hooks'
 import { FC } from "react";
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
+import { usersApi } from '../../../api'
 
 
 type Props = {
@@ -13,7 +15,9 @@ type Props = {
 
 const UserCardMovie: FC<Props> = ({media_type}) => {
     
-    const { itemsDB, openDetail } = useItems()
+    const { itemsDB, isItemViewed } = useItems()
+
+    const { userLogged } = useUsers()
 
     const navigate = useNavigate()
 
@@ -22,11 +26,9 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
           {itemsDB?.map ((item) =>  { 
             if (item.media_type === media_type)  { return (
               <Card sx={{ width: 200, margin: 2 }} className="card_movie" onClick={() => navigate(`/detail?id=${item.idDB}`)}>
-                <CardActionArea>
-                      {/* <Link to={`/detail?id=${item.idDB}`}> */}
+                <CardActionArea>                      
                         <CardMedia component="img"  height="300" width="150" image={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
                         alt={item.title}/>  
-                      {/* </Link> */}
                   <CardContent sx={{ height: 200 }}>
                     <Typography  component="div" sx={{ color: 'gray', fontWeight: 500, fontSize: 18, textAlign: 'center', lineHeight: 1.2 }}>
                     <p>{item.title || item.name}</p>
@@ -41,7 +43,8 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions sx={{ justifyContent: 'center' }}>
-                  <Button size="small" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" /*onClick={()=> {movieApi.addMovieToDB(item)} }*/>VISTA</Button>
+                  { !isItemViewed(item.idDB) &&  <Button size="medium" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {usersApi.addItemtoViewed( userLogged,  item.idDB)} }><EyeFill/></Button>}
+                  { isItemViewed(item.idDB) && <Button size="medium" sx={{ backgroundColor: 'red', width: 120 }} type="submit" onClick={()=> {usersApi.removeItemFromViewed(userLogged,  item.idDB)} }><EyeSlashFill/></Button>}
                 </CardActions>
               </Card>
         
@@ -53,3 +56,5 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
       }
 
       export { UserCardMovie }
+
+      //{viewed ? <EyeSlash color="#333" /> : <EyeFill color="white" />}

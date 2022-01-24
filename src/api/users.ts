@@ -17,8 +17,19 @@ const deleteUser = async (id: string | undefined) => {
   await api.delete(`users/${userToDelete?.idDB}.json`)
 };
 
+const addItemtoViewed = async (user: User | undefined, idDB: string) => {
+ const prevViewedItems = user?.viewed || []; 
+  await api.patch(`users/${user?.idDB}.json`, {viewed: [...prevViewedItems, idDB]})
 
-export const usersApi = { getUsers, addUser, deleteUser };
+}
+
+const removeItemFromViewed = async (user: User | undefined, idDB: string) => {
+  const updateViewedItems = user?.viewed?.filter((i) => i !== idDB )
+  await api.patch(`users/${user?.idDB}.json`, updateViewedItems)
+
+}
+
+export const usersApi = { getUsers, addUser, deleteUser, addItemtoViewed, removeItemFromViewed };
 
 
 // const deleteMoviesFromDB = async (id: number) => {
