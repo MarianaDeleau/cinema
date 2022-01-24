@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { movieApi } from "../../api";
+import { movieApi, usersApi } from "../../api";
 import { ApiResponse } from "../../types/models";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import {QUERY_KEYS} from "../../constants"
@@ -80,6 +80,7 @@ const useItems = () => {
            return viewed
     }
 
+  
 
     return { setPage, setSearch, page, search, lastPage, items, addMovieToDB, isLoading, itemsDB, deleteMoviesFromDB, IsMovieInDB, openDetail, movieDetail, isItemViewed };
   };

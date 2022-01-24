@@ -7,6 +7,7 @@ import { FC } from "react";
 import { useNavigate } from 'react-router-dom'
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
 import { usersApi } from '../../../api'
+import { useQueryClient } from "react-query";
 
 
 type Props = {
@@ -16,8 +17,7 @@ type Props = {
 const UserCardMovie: FC<Props> = ({media_type}) => {
     
     const { itemsDB, isItemViewed } = useItems()
-
-    const { userLogged } = useUsers()
+    const { userLogged, addItemToList } = useUsers()
 
     const navigate = useNavigate()
 
@@ -25,8 +25,8 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
           <>  
           {itemsDB?.map ((item) =>  { 
             if (item.media_type === media_type)  { return (
-              <Card sx={{ width: 200, margin: 2 }} className="card_movie" onClick={() => navigate(`/detail?id=${item.idDB}`)}>
-                <CardActionArea>                      
+              <Card sx={{ width: 200, margin: 2 }} className="card_movie" >
+                <CardActionArea onClick={() => navigate(`/detail?id=${item.idDB}`)}>                      
                         <CardMedia component="img"  height="300" width="150" image={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
                         alt={item.title}/>  
                   <CardContent sx={{ height: 200 }}>
@@ -43,8 +43,8 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions sx={{ justifyContent: 'center' }}>
-                  { !isItemViewed(item.idDB) &&  <Button size="medium" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {usersApi.addItemtoViewed( userLogged,  item.idDB)} }><EyeFill/></Button>}
-                  { isItemViewed(item.idDB) && <Button size="medium" sx={{ backgroundColor: 'red', width: 120 }} type="submit" onClick={()=> {usersApi.removeItemFromViewed(userLogged,  item.idDB)} }><EyeSlashFill/></Button>}
+                  { !isItemViewed(item.idDB) &&  <Button size="medium" sx={{ backgroundColor: 'red', width: 120 }} type="submit" onClick={()=> {addItemToList( userLogged,  item.idDB)} }><EyeSlashFill/></Button>}
+                  { isItemViewed(item.idDB) && <Button size="medium" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {usersApi.removeItemFromViewed(userLogged,  item.idDB)} }><EyeFill/></Button>}
                 </CardActions>
               </Card>
         
@@ -56,5 +56,3 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
       }
 
       export { UserCardMovie }
-
-      //{viewed ? <EyeSlash color="#333" /> : <EyeFill color="white" />}

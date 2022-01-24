@@ -117,9 +117,13 @@ const useUsers = () => {
       navigate("/login");
     };
 
+    
+    const addItemToList = async (user: User | undefined, idDB: string) => {
+      await usersApi.addItemtoViewed(user, idDB)      
+          }
+      
 
-
-    return { userLogin, loginWithToken, logout, addUser, isLoading, users, userSession, userLogged, hasUserLoggedIn, deleteUser };
+    return { userLogin, loginWithToken, logout, addUser, isLoading, users, userSession, userLogged, hasUserLoggedIn, deleteUser, addItemToList };
   };
   
 
