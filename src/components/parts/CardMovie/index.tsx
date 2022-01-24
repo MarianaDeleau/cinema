@@ -46,31 +46,6 @@ const CardMovie: FC = () => {
           </div>
           );
       }
-    // return (
-    //     <div className="container">
-    //         {items?.results.map((item) => {
-    //             return (
-    //                 <Card key={item.id} data-id={item.id}>
-    //                 <div>
-    //                     <img src={`http://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title} title={item.title} />
-    //                 </div>
-    //                 <div>
-    //                     <h3>{item.title}</h3>
-    //                     <h4>{item.vote_average}</h4>
-    //                 </div>
-    //                 <Box
-    //                 sx={{ '& > legend': { mt: 2 }, }} >      
-    //                 <Rating name="read-only" value={item.vote_average/2} precision={0.5} max={5} readOnly />                  
-    //                 </Box>
-
-    //             </Card>
-    //             )
-    //         })
-       
-    //         }
-    //     </div>
-    // )
-
-
+   
 
 export { CardMovie }
