@@ -28,5 +28,10 @@ const removeItemFromViewed = async (user: User | undefined, idDB: string) => {
 await api.patch(`users/${user?.idDB}.json`, {viewed: updateViewedItems,})
 }
 
-export const usersApi = { getUsers, addUser, deleteUser, addItemtoViewed, removeItemFromViewed };
+const updateUser = async (userID: string | undefined) => {
+  const response = await api.get(`/users/${userID}.json`)
+  return response.data;
+}
+
+export const usersApi = { getUsers, addUser, deleteUser, addItemtoViewed, removeItemFromViewed, updateUser };
 

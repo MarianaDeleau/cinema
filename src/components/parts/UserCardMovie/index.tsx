@@ -17,7 +17,7 @@ type Props = {
 const UserCardMovie: FC<Props> = ({media_type}) => {
     
     const { itemsDB, isItemViewed } = useItems()
-    const { userLogged, addItemToList } = useUsers()
+    const { userLogged, addItemToList, removeItemFromList } = useUsers()
 
     const navigate = useNavigate()
 
@@ -44,7 +44,7 @@ const UserCardMovie: FC<Props> = ({media_type}) => {
                 </CardActionArea>
                 <CardActions sx={{ justifyContent: 'center' }}>
                   { !isItemViewed(item.idDB) &&  <Button size="medium" sx={{ backgroundColor: 'red', width: 120 }} type="submit" onClick={()=> {addItemToList( userLogged,  item.idDB)} }><EyeSlashFill/></Button>}
-                  { isItemViewed(item.idDB) && <Button size="medium" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {usersApi.removeItemFromViewed(userLogged,  item.idDB)} }><EyeFill/></Button>}
+                  { isItemViewed(item.idDB) && <Button size="medium" sx={{ backgroundColor: 'gray', width: 120 }} type="submit" onClick={()=> {removeItemFromList(userLogged,  item.idDB)} }><EyeFill/></Button>}
                 </CardActions>
               </Card>
         
