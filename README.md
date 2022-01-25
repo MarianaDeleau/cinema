@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+### CinemaADA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TP FINAL - ADA  - Curso Desarrolladora FrontEnd
 
-## Available Scripts
+Este repositorio fue creado trabajo práctico final para la culminación del curso de Desarrollo Frontend de ADA.
 
-In the project directory, you can run:
+CinemaADA es una app de gestión de contenidos cinematográficos. El ADMIN gestiona que contenidos estarán disponibles en línea para los USERS agregando o eliminando las películas o series disponbles. Desde la interface de USUARIO se puede ver el detalle de los contenidos e indicar si fueron vistos o no.
 
-### `npm start`
+Está realizado en REACTJS y TYPESCRIPT. Los formularios validan información con YUP y REACT FORMS. Se utiliza CONTEXT para tener disponible la información de usuarios a lo largo de toda la aplicación y REACT QUERY para tener cacheados ciertos que se replican en varias páginas. Los estilos se implementaron con Bootstrap, componentes de MUI y algunas propiedades sobre-escritas en el CSS ./index
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+La validación de USERS se da a través de un TOKEN almacenado en el LocalStorage. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Consignas del TP
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://tp-final-ada.netlify.app/narrativa
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requisitos para su utilización
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Terminal
+Para poder ejecutar el código vamos a usar la terminal, se puede abrir la Terminal directamente, o ejecutarla desde el VSCode. 
+Es necesario tener instalado Node, React y Typescript.
+Ejecutar npm install para la descarga de los paquetes requeridos para el funcionamiento (lista en package.JSON). 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Estructura
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+./home
+Movies and Series page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+./login
+Sign in page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+./signup
+Add User Page
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+./movies
+Movies Page
 
-## Learn More
+./series
+Series Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+./users
+Fichas de usuarios registrados. Solo se accede a los datos logueado como admin.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+./admin
+Interface de gestión de contenidos disponibles para users. Solo se accede a los datos logueado como admin.
+
+./detail
+Tab que se renderiza cuando se clickea desde user una card de contenidos.
+
+./logout
+Botón de Logout
+
+
+## Observaciones del trabajo:
+- Se realizó una branch por cada función, add o fix. 
+- Diseño web responsive para mobile mediaScreen 500px
+
+
+## Deploy en 
+
+
+
+### Desarrolladora: 
+- Mariana Deleau: [portafolio] (https://marianadeleau.github.io/ada-8va-portafolio/)
