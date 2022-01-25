@@ -20,8 +20,9 @@ const searchMulti = async ({page, search}: Filter): Promise<ApiResponse> => {
 
 const addMovieToDB = async (data: Item) => {
   const dataBase = await getMoviesDB(); 
-  const movieToAdd = await dataBase.find((item) => item.id === data.id); 
+  const movieToAdd =  dataBase.find((item) => item.id === data.id); 
   !movieToAdd && await api.post('/items.json', { ...data, media_type: data.media_type || "movie" })
+  
 }
 
 const getMoviesDB = async (): Promise<Item[]> => {
@@ -44,7 +45,6 @@ const getTrailers = async (id: number) => {
   const response = await apiCinema.get(`/movie/${id}/videos`);
   return response.data.results;
 };
-
 
 
 export const movieApi = {  searchMulti, addMovieToDB, getMoviesDB, deleteMoviesFromDB, getMovieDB, getTrailers }

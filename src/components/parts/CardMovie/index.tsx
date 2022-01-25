@@ -11,7 +11,7 @@ import { movieApi } from '../../../api';
 
 const CardMovie: FC = () => {
     
-    const { items, IsMovieInDB } = useItems();  
+    const { items, IsMovieInDB, itemsDB, deleteMoviesFromDB, addMovieToDB } = useItems();  
 
 
         return (
@@ -36,41 +36,18 @@ const CardMovie: FC = () => {
                 </CardContent>
               </CardActionArea>
               {!IsMovieInDB(item.id) && <CardActions sx={{ justifyContent: 'center' }}>
-              <Button size="small" sx={{ backgroundColor: 'red', width: 120 }} type="submit" onClick={()=> {movieApi.addMovieToDB(item)} }>AGREGAR</Button> 
+              <Button size="small" sx={{ backgroundColor: 'red', width: 120 }} type="submit" onClick={()=> {addMovieToDB(item)} }>AGREGAR</Button> 
               </CardActions>}
               {IsMovieInDB(item.id) &&<CardActions sx={{ justifyContent: 'center' }}>
-              <Button size="small" sx={{ backgroundColor: 'black', width: 120 }} type="submit" onClick={()=> {movieApi.deleteMoviesFromDB(item.id)} }>REMOVER</Button>
+              <Button size="small" sx={{ backgroundColor: 'black', width: 120 }} type="submit" onClick={()=> {deleteMoviesFromDB(item.id)} }>REMOVER</Button>
               </CardActions>}
             </Card>
             )})}
           </div>
           );
+
+          
       }
-    // return (
-    //     <div className="container">
-    //         {items?.results.map((item) => {
-    //             return (
-    //                 <Card key={item.id} data-id={item.id}>
-    //                 <div>
-    //                     <img src={`http://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title} title={item.title} />
-    //                 </div>
-    //                 <div>
-    //                     <h3>{item.title}</h3>
-    //                     <h4>{item.vote_average}</h4>
-    //                 </div>
-    //                 <Box
-    //                 sx={{ '& > legend': { mt: 2 }, }} >      
-    //                 <Rating name="read-only" value={item.vote_average/2} precision={0.5} max={5} readOnly />                  
-    //                 </Box>
-
-    //             </Card>
-    //             )
-    //         })
-       
-    //         }
-    //     </div>
-    // )
-
-
+   
 
 export { CardMovie }

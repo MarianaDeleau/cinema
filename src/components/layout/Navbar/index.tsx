@@ -10,6 +10,7 @@ import { ExitToAppRounded } from '@mui/icons-material';
 import { NavLink, useLocation} from 'react-router-dom';
 import { useUsers } from '../../../hooks';
 import {PersonOutline, PersonAdd}  from '@mui/icons-material';
+import { Search }  from '@mui/icons-material';
 
 const NavbarApp = () => {
   const [value, setValue] = React.useState(0);
@@ -17,7 +18,7 @@ const NavbarApp = () => {
 
   const { userLogged } = useUsers()
 
-  const routes = ['/signup', '/login', '/', '/movies', '/series', '/users', '/admin', '/' ]
+  const routes = ['/signup', '/login', '/', '/movies', '/series', '/users', '/admin', '/detail', '/' ]
 
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -36,19 +37,10 @@ const { logout } = useUsers()
       <Tab icon={<TvRoundedIcon />} label="SERIES" component={NavLink} to={'/series'} value={routes[4]}/>
       {userLogged?.role === 'admin' && <Tab icon={<PersonPinIcon />} label="USERS" component={NavLink} to={'/users'} value={routes[5]}/>}
       {userLogged?.role === 'admin' && <Tab icon={<LockIcon />} label="ADMIN" component={NavLink} to={'/admin'} value={routes[6]}/>}
+      { window.location.pathname === '/detail' && <Tab icon={<Search />} label="DETAIL" component={NavLink} to={'/detail'}  value={routes[7]} />}
       <Tab icon={<ExitToAppRounded />} label="EXIT" component={NavLink} to={'/'} onClick={logout} value={false}/>
     </Tabs>
-
   );
 };
 
 export { NavbarApp };
-
-// {menuItems.map((item) => {
-
-//   return (
-//     <Tab icon={<MovieIcon/>} label={item.label} component={NavLink} to={item.href} />
-//   )
-//   })}  
-
-  
