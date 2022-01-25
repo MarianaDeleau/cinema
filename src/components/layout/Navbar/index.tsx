@@ -37,8 +37,8 @@ const { logout } = useUsers()
       <Tab icon={<TvRoundedIcon />} label="SERIES" component={NavLink} to={'/series'} value={routes[4]}/>
       {userLogged?.role === 'admin' && <Tab icon={<PersonPinIcon />} label="USERS" component={NavLink} to={'/users'} value={routes[5]}/>}
       {userLogged?.role === 'admin' && <Tab icon={<LockIcon />} label="ADMIN" component={NavLink} to={'/admin'} value={routes[6]}/>}
-      <Tab icon={<ExitToAppRounded />} label="EXIT" component={NavLink} to={'/'} onClick={logout} value={false}/>
       { window.location.pathname === '/detail' && <Tab icon={<Search />} label="DETAIL" component={NavLink} to={'/detail'}  value={routes[7]} />}
+      <Tab icon={<ExitToAppRounded />} label="EXIT" component={NavLink} to={'/'} onClick={logout} value={false}/>
     </Tabs>
   );
 };

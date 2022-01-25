@@ -46,19 +46,19 @@ const useItems = () => {
       params.set("search", s);     
       navigate(`${window.location.pathname}?${params.toString()}`);
     };
-
-    const { mutateAsync: addMovieToDB } = useMutation(movieApi.addMovieToDB,  {
-      onSuccess: () => {
-        queryClient.invalidateQueries(QUERY_KEYS.ITEMS);
-      },
-    });
-  
+    
     const { isLoading } = useQuery(QUERY_KEYS.ITEMS, movieApi.getMoviesDB, {
       onSuccess: (data:Item[])=> {
         setItemsDB(data);
       }
     })
-
+    
+    const { mutateAsync: addMovieToDB } = useMutation(movieApi.addMovieToDB,  {
+      onSuccess: () => {
+        queryClient.invalidateQueries(QUERY_KEYS.ITEMS)
+      },
+    });
+    
     const { mutateAsync: deleteMoviesFromDB } = useMutation(movieApi.deleteMoviesFromDB,  {
       onSuccess: () => {
         queryClient.invalidateQueries(QUERY_KEYS.ITEMS);
@@ -69,18 +69,19 @@ const useItems = () => {
       const detail = await movieApi.getMovieDB(id)
        setMovieDetail(detail.data) ;
     }
-    
-    const IsMovieInDB =  (id: number) => {
+         
+      const IsMovieInDB =  (id: number) => {
       const IsMovieIn =  itemsDB?.find((item) => item.id === id);
-      if(IsMovieIn){ return true }
+      if(IsMovieIn){ 
+        return true 
+      }      
     }
-
-    const isItemViewed = (idDB: string) => {
+      
+      const isItemViewed = (idDB: string) => {
            const viewed = userLogged?.viewed?.includes(idDB)
            return viewed
     }
-
-  
+ 
 
     return { setPage, setSearch, page, search, lastPage, items, addMovieToDB, isLoading, itemsDB, deleteMoviesFromDB, IsMovieInDB, openDetail, movieDetail, isItemViewed };
   };

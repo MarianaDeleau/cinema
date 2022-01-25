@@ -3,11 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Loading } from "../../components/common/Loading";
 import { useUsers } from "../../hooks/useUsers"
 
-// Verficar si existe una sesión activa y en caso de no existir
-// carga la pagina de Login.
-// Si hay un usuario en sesión, entonces se carga el componente
-// actual o, si vengo de login o signup, tengo que enviar a
-// la pagina principal.
 
 const publicRoutes = ["/login", "/signup"];
 

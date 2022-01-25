@@ -11,7 +11,7 @@ import { movieApi } from '../../../api';
 
 const CardMovie: FC = () => {
     
-    const { items, IsMovieInDB } = useItems();  
+    const { items, IsMovieInDB, itemsDB, deleteMoviesFromDB, addMovieToDB } = useItems();  
 
 
         return (
@@ -36,15 +36,17 @@ const CardMovie: FC = () => {
                 </CardContent>
               </CardActionArea>
               {!IsMovieInDB(item.id) && <CardActions sx={{ justifyContent: 'center' }}>
-              <Button size="small" sx={{ backgroundColor: 'red', width: 120 }} type="submit" onClick={()=> {movieApi.addMovieToDB(item)} }>AGREGAR</Button> 
+              <Button size="small" sx={{ backgroundColor: 'red', width: 120 }} type="submit" onClick={()=> {addMovieToDB(item)} }>AGREGAR</Button> 
               </CardActions>}
               {IsMovieInDB(item.id) &&<CardActions sx={{ justifyContent: 'center' }}>
-              <Button size="small" sx={{ backgroundColor: 'black', width: 120 }} type="submit" onClick={()=> {movieApi.deleteMoviesFromDB(item.id)} }>REMOVER</Button>
+              <Button size="small" sx={{ backgroundColor: 'black', width: 120 }} type="submit" onClick={()=> {deleteMoviesFromDB(item.id)} }>REMOVER</Button>
               </CardActions>}
             </Card>
             )})}
           </div>
           );
+
+          
       }
    
 

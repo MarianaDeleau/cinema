@@ -6,13 +6,13 @@ import { UserCardMovie } from '../../components/parts/UserCardMovie';
 
 const DetailPage: FC = () => {
   
-  //const params = new URLSearchParams(window.location.search);
+  
   
     return (
       <>
      <Layout mainClass="detail">
         <div className="container">
-          <DetailCard /*idDetail={params.get('id')!}*//>
+          <DetailCard/>
         </div>
         <div className="container d-flex  justify-content-start me-5 mt-5">
           <h2>Also...</h2>
