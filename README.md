@@ -16,6 +16,16 @@ La validación de USERS se da a través de un TOKEN almacenado en el LocalStorag
 https://tp-final-ada.netlify.app/narrativa
 
 
+## USERS 
+
+Admin
+email: adrian@ada.com
+Password: ada12345
+
+User
+email: ada@ada.com
+Password: ada12345
+
 ## Requisitos para su utilización
 
 Terminal
