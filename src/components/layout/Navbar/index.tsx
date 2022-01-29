@@ -29,7 +29,7 @@ const { logout } = useUsers()
 
   return (
   
-    <Tabs  value={location.pathname} onChange={handleChange} aria-label="icon label tabs example">      
+    <Tabs  value={location.pathname} onChange={handleChange} aria-label="icon label tabs example" className='navbar'>      
       {!userLogged && <Tab icon={<PersonAdd />} label="SIGNUP" component={NavLink} to={'/signup'} value={routes[0]}/>}
       {!userLogged &&  <Tab icon={<PersonOutline />} label="LOGIN" component={NavLink} to={'/login'} value={routes[1]}/> }
       <Tab icon={<HomeIcon />} label="HOME" component={NavLink} to={'/'} value={routes[2]}/>
