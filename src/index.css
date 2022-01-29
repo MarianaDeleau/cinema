@@ -42,6 +42,42 @@ footer{
   color: #FFF;
 }
 
+form{
+  width: 400px ;
+  background-color: grey;
+  border-radius: 20px;
+  padding: 20px;
+  height: auto;   
+  }
+
+  form > div{
+    display: flex;
+    justify-content: end;
+    margin: 5px 0px
+}
+
+input{
+    width: 180px;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+select{
+    width: 180px;
+}
+
+h4{
+    margin-bottom: 20px;
+}
+
+h2{
+  text-align: center;
+}
+
+.navbar{
+  width: auto;
+}
+
 .card_movie{
   color: gray;
 }
@@ -84,33 +120,6 @@ footer{
   align-items: center;
 }
 
-form{
-  width: 400px ;
-  background-color: grey;
-  border-radius: 20px;
-  padding: 20px;
-  height: auto;   
-  }
-
-  form > div{
-    display: flex;
-    justify-content: end;
-    margin: 5px 0px
-}
-
-input{
-    width: 180px;
-    border-radius: 5px;
-    margin-left: auto;
-}
-
-select{
-    width: 180px;
-}
-
-h4{
-    margin-bottom: 20px;
-}
 
 .btnForm{
   width: 150px;
@@ -122,39 +131,95 @@ h4{
   align-self: center;
 }
 
-h2{
-  text-align: center;
-}
 
+/*MOBILE / RESPONSIVE*/
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1050px) {
 
-
-  .card_detail{
-flex-direction: column !important;
-align-items: center;
-  }
  
   header{
     height: auto;
     flex-direction: column;
     align-items: center;
   }
-  
-  .logo{
-    font-size: 65px;
-  }
-  .MuiTab-textColorPrimary{
-    width: auto;    
-  }
-  
+
   footer{
     height: 5vh;
     width: 100vw; 
     position: relative;
   }
+
+  .card_detail{
+flex-direction: column !important;
+align-items: flex-start;
+  }
+
+  .logo{
+    font-size: 75px;
+  }
+
+  .MuiTab-textColorPrimary{
+    width: auto;    
+  }
+  
+  .container{
+  padding: 0 !important;
 }
 
-.container{
-  padding: 0 !important;
+.css-aym9vq-MuiButtonBase-root-MuiTab-root{
+  min-width: 0 !important;
+  padding: 15px !important;
+}
+
+.MuiBox-root.css-0{
+  align-self: center;
+}
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .logo{
+    font-size: 65px;
+  }
+
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+    padding: 10px !important;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+
+  .logo{
+    font-size: 55px;
+  }
+
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+    padding: 5px !important;
+  }
+
+  .MuiBox-root.css-0{
+    width: auto;
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+
+  .logo{
+    font-size: 40px;
+  }
+
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+    padding: 1px !important;
+  }
+
+  .MuiBox-root.css-0{
+    width: auto;
+  }
+  .MuiButtonBase-root {
+    font-size: 10px !important;
+  }
+
 }
