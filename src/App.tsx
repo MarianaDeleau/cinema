@@ -14,12 +14,13 @@ const App = () => {
           <Routes>
             <Route path='/signup' element={<Signup/>}/>
             <Route path='/login' element={<Login/>}/>
-            <Route path='/admin' element={<Admin/>}/>
+            <Route path='/home' element={<Home/>}/>
             <Route path='/movies' element={<Movies/>}/>
             <Route path='/series' element={<Series/>}/>
-            <Route path='/detail' element={<Detail/>}/>
+            <Route path='/admin' element={<Admin/>}/>
             <Route path='/users' element={<Users/>}/>
-            <Route path='/' element={<Home/>}/>
+            <Route path='/detail' element={<Detail/>}/>
+            <Route path='/' element={<Login/>}/>
           </Routes>
         </Router>
       </UsersProvider>

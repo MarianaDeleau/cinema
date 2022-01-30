@@ -18,7 +18,7 @@ const NavbarApp = () => {
 
   const { userLogged } = useUsers()
 
-  const routes = ['/signup', '/login', '/', '/movies', '/series', '/users', '/admin', '/detail', '/' ]
+  const routes = ['/signup', '/login', '/home', '/movies', '/series', '/users', '/admin', '/detail', '/' ]
 
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -32,7 +32,7 @@ const { logout } = useUsers()
     <Tabs  value={location.pathname} onChange={handleChange} aria-label="icon label tabs example" className='navbar'>      
       {!userLogged && <Tab icon={<PersonAdd />} label="SIGNUP" component={NavLink} to={'/signup'} value={routes[0]}/>}
       {!userLogged &&  <Tab icon={<PersonOutline />} label="LOGIN" component={NavLink} to={'/login'} value={routes[1]}/> }
-      <Tab icon={<HomeIcon />} label="HOME" component={NavLink} to={'/'} value={routes[2]}/>
+      <Tab icon={<HomeIcon />} label="HOME" component={NavLink} to={'/home'} value={routes[2]}/>
       <Tab icon={<MovieIcon />} label="MOVIES" component={NavLink} to={'/movies'} value={routes[3]}/>
       <Tab icon={<TvRoundedIcon />} label="SERIES" component={NavLink} to={'/series'} value={routes[4]}/>
       {userLogged?.role === 'admin' && <Tab icon={<PersonPinIcon />} label="USERS" component={NavLink} to={'/users'} value={routes[5]}/>}
