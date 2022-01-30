@@ -187,6 +187,9 @@ align-items: flex-start;
     padding: 10px !important;
   }
 
+  form{
+    width: 300px ;
+  }
 }
 
 @media screen and (max-width: 425px) {

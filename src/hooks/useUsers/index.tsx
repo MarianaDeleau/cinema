@@ -74,7 +74,7 @@ const useUsers = () => {
         if (token) {
         setTokenStorage(token);
         userSession({ ...currentUser });
-        navigate("/")  
+        navigate("/home")  
         setHasUserLoggedIn(true);
     } else {
       setHasUserLoggedIn(false);
