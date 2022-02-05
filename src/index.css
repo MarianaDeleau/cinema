@@ -135,69 +135,6 @@ h2{
 /*MOBILE / RESPONSIVE*/
 
 
-@media screen and (max-width: 767px) {
-
-  
-  form{
-    width: 250px ;
-    align-items: center;
-  }
-  form > div{
-    display: flex;
-    flex-direction: column;
-    margin: 5px 0px; 
-    align-items: center;
-  }
-  
-  .logo{
-    font-size: 40px;
-  }
-  
-  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
-    
-    padding: 2px !important;
-    
-  }
-  
-  .MuiBox-root.css-0{
-    width: auto;
-  }
-  .MuiButtonBase-root {
-    font-size: 10px !important;
-  }
-  
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  
-  .logo{
-    font-size: 75px;
-  }
-  
-  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
-    padding: 10px !important;
-  }
-  
-  form{
-    width: 300px ;
-  }
-}
-
-/* @media screen and (max-width: 767px) {
-  
-  .logo{
-    font-size: 55px;
-  }
-  
-  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
-    padding: 5px !important;
-  }
-  
-  .MuiBox-root.css-0{
-    width: auto;
-  }
-  
-} */
-
 @media screen and (max-width: 1024px) {
 
 
@@ -239,5 +176,69 @@ align-items: flex-start;
 .MuiBox-root.css-0{
   align-self: center;
 }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .logo{
+    font-size: 75px;
+  }
+
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+    padding: 10px !important;
+  }
+
+  form{
+    width: 300px ;
+  }
+}
+
+/* @media screen and (max-width: 767px) {
+
+  .logo{
+    font-size: 55px;
+  }
+
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+    padding: 5px !important;
+  }
+
+  .MuiBox-root.css-0{
+    width: auto;
+  }
+
+} */
+
+@media screen and (max-width: 767px) {
+
+
+  form{
+    width: 250px ;
+    align-items: center;
+  }
+  form > div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px; 
+    align-items: center;
+}
+
+  .logo{
+    font-size: 40px;
+  }
+
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+
+    padding: 2px !important;
+
+  }
+
+  .MuiBox-root.css-0{
+    width: auto;
+  }
+  .MuiButtonBase-root {
+    font-size: 10px !important;
+  }
 
 }
