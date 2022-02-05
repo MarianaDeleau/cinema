@@ -136,6 +136,7 @@ h2{
 
 @media screen and (max-width: 1050px) {
 
+
  
   header{
     height: auto;
@@ -210,12 +211,26 @@ align-items: flex-start;
 
 @media screen and (max-width: 350px) {
 
+
+  form{
+    width: 250px ;
+    align-items: center;
+  }
+  form > div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px; 
+    align-items: center;
+}
+
   .logo{
     font-size: 40px;
   }
 
   .css-aym9vq-MuiButtonBase-root-MuiTab-root{
-    padding: 1px !important;
+
+    padding: 2px !important;
+
   }
 
   .MuiBox-root.css-0{

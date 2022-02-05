@@ -12,7 +12,7 @@ const App = () => {
       <UsersProvider>
         <Router>
           <Routes>
-            <Route path='/signup' element={<Signup/>}/>
+          <Route path='/signup' element={<Signup/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/home' element={<Home/>}/>
             <Route path='/movies' element={<Movies/>}/>
