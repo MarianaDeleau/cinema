@@ -14,7 +14,7 @@ const UsersCard: FC = () => {
                   return(
                       <Card style={{ width: '18rem' }} className="shadow-lg bg-body rounded d-flex align-items-center text-center m-5">
                           <Card.Header style={{width: "100%"}} className="mt-1">
-                              <Card.Title className="fw-bold h4 text-white fs-6 fw-light badge rounded-pill bg-danger text-dark text-wrap">{(u.name.toUpperCase() + ' ' + u.lastname.toUpperCase())}</Card.Title>
+                              <Card.Title className="fw-bold h4 text-white fs-6 fw-light badge rounded-pill bg-danger text-dark text-wrap">{(u.name + ' ' + u.lastname).toUpperCase()}</Card.Title>
                           </Card.Header>
                           <Card.Body>
                               <Card.Subtitle className="mb-2 text-muted fs-6 fw-normal">{u.email}</Card.Subtitle>
