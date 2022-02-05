@@ -145,7 +145,7 @@ h2{
 
   footer{
     height: 5vh;
-    width: 100vw; 
+    width: auto; 
     position: relative;
   }
 
