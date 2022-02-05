@@ -75,7 +75,7 @@ h2{
 }
 
 .navbar{
-  width: 100vw;
+  width: auto;
 }
 
 .card_movie{
@@ -134,7 +134,7 @@ h2{
 
 /*MOBILE / RESPONSIVE*/
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1024px) {
 
 
  
@@ -178,10 +178,10 @@ align-items: flex-start;
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 
   .logo{
-    font-size: 65px;
+    font-size: 75px;
   }
 
   .css-aym9vq-MuiButtonBase-root-MuiTab-root{
@@ -193,7 +193,7 @@ align-items: flex-start;
   }
 }
 
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 767px) {
 
   .logo{
     font-size: 55px;
@@ -207,9 +207,9 @@ align-items: flex-start;
     width: auto;
   }
 
-}
+} */
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 767px) {
 
 
   form{
