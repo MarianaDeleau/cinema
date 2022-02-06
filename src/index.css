@@ -137,81 +137,66 @@ h2{
 
 @media screen and (max-width: 1024px) {
 
-
- 
   header{
     height: auto;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
-
   footer{
     height: 5vh;
     width: auto; 
     position: relative;
   }
-
   .card_detail{
 flex-direction: column !important;
 align-items: flex-start;
   }
-
   .logo{
-    font-size: 75px;
+    font-size: 70px;
   }
-
   .MuiTab-textColorPrimary{
     width: auto;    
-  }
-  
+  }  
   .container{
   padding: 0 !important;
-}
-
+  }
 .css-aym9vq-MuiButtonBase-root-MuiTab-root{
   min-width: 0 !important;
   padding: 15px !important;
-}
-
+  }
 .MuiBox-root.css-0{
   align-self: center;
+  }
 }
 
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and  (max-width: 1023px) {
 
   .logo{
-    font-size: 75px;
+    font-size: 70px;
   }
-
   .css-aym9vq-MuiButtonBase-root-MuiTab-root{
     padding: 10px !important;
   }
-
   form{
     width: 300px ;
   }
 }
 
-/* @media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
 
   .logo{
-    font-size: 55px;
+    font-size: 60px;
   }
-
   .css-aym9vq-MuiButtonBase-root-MuiTab-root{
     padding: 5px !important;
   }
-
   .MuiBox-root.css-0{
     width: auto;
   }
+}
 
-} */
-
-@media screen and (max-width: 767px) {
-
+@media screen and (max-width: 400px) {
 
   form{
     width: 250px ;
@@ -222,18 +207,29 @@ align-items: flex-start;
     flex-direction: column;
     margin: 5px 0px; 
     align-items: center;
+  }
+  .logo{
+    font-size: 50px;
+  }
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+    padding: 4px !important;
+  }
+  .MuiBox-root.css-0{
+    width: auto;
+  }
+  .MuiButtonBase-root {
+    font-size: 10px !important;
+  }
 }
 
+@media screen and (max-width: 280px) {
+  
   .logo{
     font-size: 40px;
   }
-
   .css-aym9vq-MuiButtonBase-root-MuiTab-root{
-
-    padding: 2px !important;
-
+    padding: 3px !important;
   }
-
   .MuiBox-root.css-0{
     width: auto;
   }
