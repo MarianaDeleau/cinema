@@ -26,11 +26,11 @@ const DetailCard: FC = () => {
     const [trailers, setTrailers] = useState<Trailer[]>([])
 
     useEffect(() => {
-movieApi.getTrailers(movieDetail?.id!)
+movieApi.getTrailers(movieDetail?.id!, movieDetail?.media_type!)
   .then((results) => setTrailers(results)
   )},[movieDetail]);
   
-  console.log(trailers)
+ 
     return (
           <div className="d-flex flex-wrap justify-content-center ">        
           <Card sx={{ width: '100%', margin: 2 , height: 'auto',  display: 'flex', borderRadius: 15, padding: 3}} className="card_detail">

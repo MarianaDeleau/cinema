@@ -41,8 +41,13 @@ const getMovieDB = async (idDB: string) => {
   return response
 }
 
-const getTrailers = async (id: number) => {
-  const response = await apiCinema.get(`/movie/${id}/videos`);
+const getTrailers = async (id: number, media_type: string) => {
+  let response;
+  if(media_type === 'movie'){
+    response = await apiCinema.get(`/movie/${id}/videos`);
+  }else{
+    response = await apiCinema.get(`/tv/${id}/videos`);
+  }
   return response.data.results;
 };
 
