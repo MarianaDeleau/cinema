@@ -7,7 +7,7 @@ type Props = {
 
 const InputSearch: FC<Props> = ({ handleChange }) => {
   return (
-    <div className='d-flex align-items-center mt-5 mb-4'>
+    <div className="d-flex align-items-center mt-5 mb-4">
       <Search className="me-3" color="white" />
       <input
         type="search"

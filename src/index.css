@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 
-*{
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif !important;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif !important;
+}
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -20,108 +20,108 @@ header {
   background-color: black;
   display: flex;
   justify-content: space-between;
-  
 }
-main{
+main {
   height: 85vh;
   width: auto;
-  overflow: auto;   
-  background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
-  color: #FFF;
+  overflow: auto;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  color: #fff;
 }
 
-footer{
+footer {
   height: 5vh;
-  width: 100vw; 
+  width: 100vw;
   background-color: black;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFF;
+  color: #fff;
 }
 
-form{
-  width: 400px ;
+form {
+  width: 400px;
   background-color: grey;
   border-radius: 20px;
   padding: 20px;
-  height: auto;   
-  }
-
-  form > div{
-    display: flex;
-    justify-content: end;
-    margin: 5px 0px
+  height: auto;
 }
 
-input{
-    width: 180px;
-    border-radius: 5px;
-    margin-left: auto;
+form > div {
+  display: flex;
+  justify-content: end;
+  margin: 5px 0px;
 }
 
-select{
-    width: 180px;
+input {
+  width: 180px;
+  border-radius: 5px;
+  margin-left: auto;
 }
 
-h4{
-    margin-bottom: 20px;
+select {
+  width: 180px;
 }
 
-h2{
+h4 {
+  margin-bottom: 20px;
+}
+
+h2 {
   text-align: center;
 }
 
-.navbar{
+.navbar {
   width: auto;
 }
 
-.card_movie{
+.card_movie {
   color: gray;
 }
 
 /*Tipografia TAB NAVBAR*/
 .MuiButtonBase-root {
-  color: white !important
+  color: white !important;
 }
 
-
 /*Tipografia TAB NAVBAR VALUE SELECTED*/
-.Mui-selected{
-  color: gray !important
+.Mui-selected {
+  color: gray !important;
 }
 
 /*Tipografia Paginator*/
-.MuiPaginationItem-textPrimary{
-  color: black !important
+.MuiPaginationItem-textPrimary {
+  color: black !important;
 }
 
-.logo{
-  font-family: 'Monoton', cursive !important;
+.logo {
+  font-family: "Monoton", cursive !important;
   font-size: 75px;
   color: red;
 }
 
-
-.css-1aquho2-MuiTabs-indicator{
-  background-color: red !important
+.css-1aquho2-MuiTabs-indicator {
+  background-color: red !important;
 }
 
-
-.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
-  background-color: red !important
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: red !important;
 }
-.login{
+.login {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-
-.btnForm{
+.btnForm {
   width: 150px;
   color: white;
   background: red;
@@ -131,90 +131,84 @@ h2{
   align-self: center;
 }
 
-
 /*MOBILE / RESPONSIVE*/
 
-
 @media screen and (max-width: 1024px) {
-
-  header{
+  header {
     height: auto;
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
-  footer{
+  footer {
     height: 5vh;
-    width: auto; 
+    width: auto;
     position: relative;
   }
-  .card_detail{
-flex-direction: column !important;
-align-items: flex-start;
+  .card_detail {
+    flex-direction: column !important;
+    align-items: flex-start;
   }
-  .logo{
+  .logo {
     font-size: 70px;
   }
-  .MuiTab-textColorPrimary{
-    width: auto;    
-  }  
-  .container{
-  padding: 0 !important;
+  .MuiTab-textColorPrimary {
+    width: auto;
   }
-.css-aym9vq-MuiButtonBase-root-MuiTab-root{
-  min-width: 0 !important;
-  padding: 15px !important;
+  .container {
+    padding: 0 !important;
   }
-.MuiBox-root.css-0{
-  align-self: center;
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root {
+    min-width: 0 !important;
+    padding: 15px !important;
+  }
+  .MuiBox-root.css-0 {
+    align-self: center;
   }
 }
 
-@media screen and  (max-width: 1023px) {
-
-  .logo{
+@media screen and (max-width: 1023px) {
+  .logo {
     font-size: 70px;
   }
-  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root {
     padding: 10px !important;
   }
-  form{
-    width: 300px ;
+  form {
+    width: 300px;
   }
 }
 
 @media screen and (max-width: 767px) {
-
-  .logo{
+  .logo {
     font-size: 60px;
   }
-  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root {
     padding: 5px !important;
   }
-  .MuiBox-root.css-0{
+  .MuiBox-root.css-0 {
     width: auto;
   }
 }
 
 @media screen and (max-width: 400px) {
-
-  form{
-    width: 250px ;
+  form {
+    width: 250px;
     align-items: center;
   }
-  form > div{
+  form > div {
     display: flex;
     flex-direction: column;
-    margin: 5px 0px; 
+    margin: 5px 0px;
     align-items: center;
   }
-  .logo{
+  .logo {
     font-size: 50px;
   }
-  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root {
     padding: 4px !important;
   }
-  .MuiBox-root.css-0{
+  .MuiBox-root.css-0 {
     width: auto;
   }
   .MuiButtonBase-root {
@@ -223,18 +217,16 @@ align-items: flex-start;
 }
 
 @media screen and (max-width: 280px) {
-  
-  .logo{
+  .logo {
     font-size: 40px;
   }
-  .css-aym9vq-MuiButtonBase-root-MuiTab-root{
+  .css-aym9vq-MuiButtonBase-root-MuiTab-root {
     padding: 3px !important;
   }
-  .MuiBox-root.css-0{
+  .MuiBox-root.css-0 {
     width: auto;
   }
   .MuiButtonBase-root {
     font-size: 10px !important;
   }
-
 }

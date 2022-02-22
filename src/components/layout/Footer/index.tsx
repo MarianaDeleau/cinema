@@ -1,5 +1,5 @@
 const Footer = () => {
-    return <footer>Hecho con ❤️ por Marian </footer>;
-}
+  return <footer>Hecho con ❤️ por Marian </footer>;
+};
 
-export { Footer }
+export { Footer };

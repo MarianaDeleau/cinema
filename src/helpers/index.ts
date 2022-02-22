@@ -1,1 +1,1 @@
-export { mapToArray } from './mapToArray'
+export { mapToArray } from "./mapToArray";

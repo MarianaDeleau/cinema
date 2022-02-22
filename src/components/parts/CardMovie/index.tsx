@@ -7,7 +7,6 @@ import { Card } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { Button, CardActionArea, CardActions } from "@mui/material";
-import { movieApi } from "../../../api";
 
 const CardMovie: FC = () => {
   const { items, IsMovieInDB, deleteMoviesFromDB, addMovieToDB } = useItems();
