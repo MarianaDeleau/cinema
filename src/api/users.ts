@@ -20,12 +20,13 @@ const deleteUser = async (id: string | undefined) => {
 const addItemtoViewed = async (user: User | undefined, idDB: string) => {
   const prevViewedItems = user?.viewed || [];
   await api.patch(`users/${user?.idDB}.json`, {
+    ...user,
     viewed: [...prevViewedItems, idDB],
   });
 };
 
 const removeItemFromViewed = async (user: User | undefined, idDB: string) => {
-  const updateViewedItems = user?.viewed?.filter((i) => i !== idDB);
+  const updateViewedItems = user?.viewed?.filter((i) => i !== idDB) || [];
   await api.patch(`users/${user?.idDB}.json`, {
     ...user,
     viewed: updateViewedItems,
