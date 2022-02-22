@@ -15,7 +15,7 @@ const Loading = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "grey"
+        backgroundColor: "grey",
       }}
     >
       loading...

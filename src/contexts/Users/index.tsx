@@ -23,12 +23,14 @@ const UsersProvider: FC = ({ children }) => {
     setUsers(users);
   };
 
-  const userSession  = (user: User | undefined) => {
-    setUserLogged(user || undefined)
-  }
+  const userSession = (user: User | undefined) => {
+    setUserLogged(user || undefined);
+  };
 
   return (
-    <UsersContext.Provider value={{ users, userLogged, updateUsers, userSession }}>
+    <UsersContext.Provider
+      value={{ users, userLogged, updateUsers, userSession }}
+    >
       {children}
     </UsersContext.Provider>
   );

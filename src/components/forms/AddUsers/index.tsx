@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { defaultValues } from "./defaultValues";
 import { validationSchema } from "./validationschema";
@@ -7,27 +7,30 @@ import { useUsers } from "../../../hooks";
 import { AddUserType } from "../../../types/models";
 import { useNavigate } from "react-router-dom";
 
-
 const AddUsers: FC = () => {
-    const { addUser } = useUsers();
-  
-    const navigate = useNavigate();
+  const { addUser } = useUsers();
 
-    const { handleSubmit, register, formState } = useForm({
-      defaultValues,
-      resolver: yupResolver(validationSchema),
-    });
-  
-    const onSubmit = async (data: AddUserType) => {
-      await addUser(data);
-      navigate("/login");
-    };
-  
-    return (
-      <div className="d-flex flex-column">
-      <form action="" onSubmit={handleSubmit(onSubmit)} className="d-flex flex-wrap flex-column">
-      <h2>Sign-up</h2>
-      <h6>Por favor regístrese:</h6>
+  const navigate = useNavigate();
+
+  const { handleSubmit, register, formState } = useForm({
+    defaultValues,
+    resolver: yupResolver(validationSchema),
+  });
+
+  const onSubmit = async (data: AddUserType) => {
+    await addUser(data);
+    navigate("/login");
+  };
+
+  return (
+    <div className="d-flex flex-column">
+      <form
+        action=""
+        onSubmit={handleSubmit(onSubmit)}
+        className="d-flex flex-wrap flex-column"
+      >
+        <h2>Sign-up</h2>
+        <h6>Por favor regístrese:</h6>
         <div className="form-group">
           <label htmlFor="">Nombre: </label>
           <input type="text" {...register("name")} />
@@ -58,17 +61,29 @@ const AddUsers: FC = () => {
           </span>
         </div>
         <div className="form-group">
-          <label htmlFor="" hidden>Role</label>
-          <input type="text" {...register("role")} disabled value="user" hidden/>
+          <label htmlFor="" hidden>
+            Role
+          </label>
+          <input
+            type="text"
+            {...register("role")}
+            disabled
+            value="user"
+            hidden
+          />
         </div>
         <div className="form-group">
-          <label htmlFor="" hidden>Viewed</label>
+          <label htmlFor="" hidden>
+            Viewed
+          </label>
           <input type="text" {...register("viewed")} hidden />
         </div>
-        <button type="submit" className="btnForm">Crear Cuenta</button>
+        <button type="submit" className="btnForm">
+          Crear Cuenta
+        </button>
       </form>
-      </div>
-    );
-  };
-  
-  export { AddUsers };
+    </div>
+  );
+};
+
+export { AddUsers };

@@ -11,5 +11,4 @@ export const validationSchema = yup.object().shape({
     .required(FORM_VALIDATIONS.REQUIRED)
     .min(8, FORM_VALIDATIONS.SIZE.EIGHT)
     .matches(/^(?=.*[a-z])(?=.*\d)[a-z\d\w\W]{8,}$/),
- 
 });

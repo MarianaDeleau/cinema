@@ -1,9 +1,9 @@
 export const defaultValues = {
   name: "",
-  lastname:"",
+  lastname: "",
   birthdate: "",
   email: "",
   password: "",
-  role:"user",
+  role: "user",
   viewed: [""],
 };

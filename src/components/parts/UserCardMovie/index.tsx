@@ -6,20 +6,13 @@ import { useItems, useUsers } from "../../../hooks";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
-import { usersApi } from "../../../api";
-import { useQueryClient } from "react-query";
 
 type Props = {
   media_type: string;
 };
 
 const UserCardMovie: FC<Props> = ({ media_type }) => {
-  const {
-    itemsDB,
-    isItemViewed,
-    IsMovieInDB,
-    deleteMoviesFromDB,
-  } = useItems();
+  const { itemsDB, isItemViewed, IsMovieInDB, deleteMoviesFromDB } = useItems();
   const { userLogged, addItemToList, removeItemFromList } = useUsers();
 
   const navigate = useNavigate();

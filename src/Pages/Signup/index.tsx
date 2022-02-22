@@ -1,17 +1,16 @@
-import { FC } from 'react'
-import { Layout } from '../../components';
-import { AddUsers } from '../../components/forms/AddUsers';
-import { WithAuth } from '../../hoc';
+import { FC } from "react";
+import { Layout } from "../../components";
+import { AddUsers } from "../../components/forms/AddUsers";
+import { WithAuth } from "../../hoc";
 
 const SignupPage: FC = () => {
-    
-    return (
-      <>
+  return (
+    <>
       <Layout mainClass="login">
-         <AddUsers/>
+        <AddUsers />
       </Layout>
-      </>
-    );
-  };
-  
-  export const Signup =  WithAuth(SignupPage);
+    </>
+  );
+};
+
+export const Signup = WithAuth(SignupPage);
