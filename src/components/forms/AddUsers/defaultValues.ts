@@ -5,5 +5,6 @@ export const defaultValues = {
   email: "",
   password: "",
   role: "user",
-  viewed: [""],
+  viewed: [],
+  idDB: "",
 };
